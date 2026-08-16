@@ -59,12 +59,11 @@ export default function EventDetails() {
             {/* LEFT: detail cards */}
             <div className="flex flex-col gap-4">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                {/* TODO: Replace with confirmed details */}
                 {[
-                  { label: "When", value: "Sat, Oct 18", sub: "9:00 AM – 3:00 PM" },
-                  { label: "Where", value: "Parkland Library", sub: "6620 University Dr" },
-                  { label: "Who", value: "Grades 9–12", sub: "Ages 14–18" },
-                  { label: "Cost", value: "Free", sub: "Lunch included" },
+                  { label: "When", value: "Early–Mid October", sub: "Thursday evening, 5:00–6:15 PM" },
+                  { label: "Where", value: "Parkland, FL", sub: "Venue TBD — Chamber or MSD Library" },
+                  { label: "Who", value: "Grades 9–12", sub: "Ages 14–18 · Parents welcome" },
+                  { label: "Cost", value: "Free", sub: "Gift bag included" },
                 ].map((card) => (
                   <div key={card.label} className="bg-paper border border-line rounded-2xl p-6">
                     <div className="font-heading font-semibold text-[11px] tracking-[.1em] uppercase text-gold">{card.label}</div>
@@ -78,9 +77,10 @@ export default function EventDetails() {
                 <h3 className="font-heading font-bold text-lg text-ink mb-3.5">Good to know</h3>
                 <div className="flex flex-col gap-3">
                   {[
-                    "No experience or money required — bring yourself and a phone.",
-                    "Parents welcome to drop off; certificate of completion provided.",
-                    "Community service hours available for attendees.",
+                    "No experience or money required — come because you want to learn.",
+                    "Parents and guardians are welcome to attend.",
+                    "Every attendee leaves with a gift bag and a take-home resource packet.",
+                    "Direct access to Chamber of Commerce professionals — connections you can keep.",
                   ].map((item, i) => (
                     <div key={i} className="flex gap-3 items-start">
                       <span className="flex-none w-[22px] h-[22px] rounded-full bg-mist text-dg flex items-center justify-center font-heading font-bold text-[13px]">✓</span>

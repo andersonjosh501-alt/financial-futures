@@ -6,8 +6,8 @@ import HeroBackground from "@/components/HeroBackground";
 
 const VALUE_PROPS = [
   {
-    title: "Learn from real pros",
-    desc: "Advisors, founders, and investors break down how money actually works — no textbook jargon.",
+    title: "Real knowledge, not lectures",
+    desc: "Chamber professionals who have actually built wealth break it down — no textbooks, no fluff, just honest answers.",
     icon: (
       <svg width="38" height="38" viewBox="0 0 48 48" aria-hidden="true">
         <polygon points="24,8 46,17 24,26 2,17" fill="#D9A81F" />
@@ -18,8 +18,8 @@ const VALUE_PROPS = [
     ),
   },
   {
-    title: "Hands-on, not lectures",
-    desc: "Build a real budget, run a mock portfolio, and make decisions with live scenarios.",
+    title: "Access you can't Google",
+    desc: "Face-to-face time with financial professionals from the Parkland Chamber of Commerce — that access doesn't exist in a classroom or a YouTube video.",
     icon: (
       <svg width="38" height="38" viewBox="0 0 48 48" aria-hidden="true">
         <circle cx="24" cy="19" r="11.5" fill="#D9A81F" />
@@ -30,8 +30,8 @@ const VALUE_PROPS = [
     ),
   },
   {
-    title: "Meet your people",
-    desc: "Connect with mentors and other students who are serious about their future.",
+    title: "Leave ready to invest",
+    desc: "Every attendee leaves knowing the accounts available to them, what investments to make, and how to open an account tomorrow.",
     icon: (
       <svg width="38" height="38" viewBox="0 0 48 48" aria-hidden="true">
         <path d="M24 12 L12 35 M24 12 L36 35 M12 35 L36 35" stroke="#B8860B" strokeWidth="2.6" strokeLinecap="round" />
@@ -43,8 +43,8 @@ const VALUE_PROPS = [
     ),
   },
   {
-    title: "Take real action",
-    desc: "Leave with the steps (and help) to open your first investment or savings account.",
+    title: "Take-home resources",
+    desc: "Walk out with a resource packet — book and podcast recs, topic deep-dives, and speaker LinkedIn profiles to keep the connections alive.",
     icon: (
       <svg width="38" height="38" viewBox="0 0 48 48" aria-hidden="true">
         <path d="M24 4 C31.5 12 31.5 24.5 28 32 H20 C16.5 24.5 16.5 12 24 4 Z" fill="#D9A81F" />
@@ -57,13 +57,12 @@ const VALUE_PROPS = [
   },
 ];
 
-/* TODO: Replace with confirmed session topics */
 const SESSIONS = [
-  { num: "01", title: "Money mindset & goals", desc: "Why starting young is a superpower." },
-  { num: "02", title: "Budgeting that sticks", desc: "Track, save, and still have fun." },
-  { num: "03", title: "Investing 101", desc: "Stocks, index funds, and compounding." },
-  { num: "04", title: "Credit & avoiding traps", desc: "Cards, scores, and staying out of debt." },
-  { num: "05", title: "Open your first account (live)", desc: "Sit down with a mentor and actually do it, step by step.", featured: true },
+  { num: "01", title: "Audience-driven Q&A", desc: "Pre-screened questions, called on by name — the ice breaks before anyone expects it." },
+  { num: "02", title: "Draw Wealth", desc: "Tables draw what wealth looks like. Spoiler: the real answer is time and freedom." },
+  { num: "03", title: "Chamber panel discussion", desc: "Three segments, eight questions, direct answers from professionals who've actually built wealth." },
+  { num: "04", title: "Live brokerage demo", desc: "Watch an account get opened and a first trade get placed — step by step, in real time." },
+  { num: "05", title: "Gift bags & next steps", desc: "Resource packet, book and podcast recs, speaker LinkedIn profiles — everything to keep going.", featured: true },
 ];
 
 export default function Home() {
@@ -78,15 +77,14 @@ export default function Home() {
               <div className="max-w-[720px]">
                 <div className="inline-flex items-center gap-[9px] bg-[rgba(76,175,80,.16)] border border-[rgba(76,175,80,.4)] text-[#CFEBD0] font-heading font-semibold text-xs tracking-wider uppercase px-3.5 py-[7px] rounded-full">
                   <span className="w-[7px] h-[7px] rounded-full bg-bg-green" />
-                  {/* TODO: Update location */}
-                  Parkland, FL &middot; Ages 14–18
+                  Parkland, FL &middot; High School Students
                 </div>
                 <h1 className="mt-5 font-heading font-bold text-[42px] md:text-[62px] leading-[1.02] tracking-[-0.025em] text-white">
                   Start building wealth<br />
                   <span className="text-bg-green">before you graduate.</span>
                 </h1>
                 <p className="mt-[22px] max-w-[560px] text-[19px] leading-relaxed text-[#C9D6C7]">
-                  A free one-day event where high schoolers learn investing, budgeting, and money moves from real professionals — and leave with a plan (and maybe a first account).
+                  A free community-driven event where high schoolers learn investing, budgeting, and real-world money skills from Chamber of Commerce professionals — and leave knowing exactly what to do next.
                 </p>
                 <div className="flex flex-wrap gap-3.5 mt-8">
                   <button
@@ -104,13 +102,13 @@ export default function Home() {
                 </div>
                 <div className="flex flex-wrap gap-[30px] mt-10">
                   <div>
-                    <div className="font-heading font-bold text-[30px] text-white">1 Day</div>
-                    <div className="text-[13px] text-[#9DB29C]">Saturday workshop</div>
+                    <div className="font-heading font-bold text-[30px] text-white">75–100</div>
+                    <div className="text-[13px] text-[#9DB29C]">Expected attendees</div>
                   </div>
                   <div className="w-px bg-white/15" />
                   <div>
-                    <div className="font-heading font-bold text-[30px] text-white">12+</div>
-                    <div className="text-[13px] text-[#9DB29C]">Pro speakers &amp; mentors</div>
+                    <div className="font-heading font-bold text-[30px] text-white">Chamber</div>
+                    <div className="text-[13px] text-[#9DB29C]">Pro speakers &amp; panelists</div>
                   </div>
                   <div className="w-px bg-white/15" />
                   <div>
@@ -125,13 +123,12 @@ export default function Home() {
           {/* TRUST BAR */}
           <section className="bg-cream border-b border-line">
             <div className="max-w-[1200px] mx-auto flex items-center justify-center flex-wrap gap-x-[34px] gap-y-2.5 px-6 lg:px-[34px] py-5">
-              <span className="font-heading font-semibold text-xs tracking-[.1em] uppercase text-muted">Backed by</span>
-              {/* TODO: Replace with confirmed partners */}
+              <span className="font-heading font-semibold text-xs tracking-[.1em] uppercase text-muted">In partnership with</span>
               <span className="font-heading font-bold text-[15px] text-dg">Parkland Chamber of Commerce</span>
               <span className="w-[5px] h-[5px] rounded-full bg-gold" />
-              <span className="font-heading font-bold text-[15px] text-dg">Local Financial Advisors</span>
+              <span className="font-heading font-bold text-[15px] text-dg">MSD Investment Club</span>
               <span className="w-[5px] h-[5px] rounded-full bg-gold" />
-              <span className="font-heading font-bold text-[15px] text-dg">Broward Schools</span>
+              <span className="font-heading font-bold text-[15px] text-dg">Anderson Accounting &amp; Consulting</span>
             </div>
           </section>
 
@@ -143,7 +140,7 @@ export default function Home() {
                 Real skills. Real people. Real head start.
               </h2>
               <p className="mt-2 mx-auto max-w-[520px] text-base text-muted">
-                Four things you&apos;ll walk away with — no finance background needed.
+                Four things you&apos;ll walk away with — no finance background needed. Every topic is answerable with &ldquo;I can use this next week.&rdquo;
               </p>
             </div>
             <div className="max-w-[1200px] mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[22px] px-6 lg:px-[34px] pb-[78px] pt-[22px]">

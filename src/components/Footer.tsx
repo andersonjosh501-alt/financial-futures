@@ -6,7 +6,7 @@ export default function Footer() {
           Financial<span className="text-bg-green">Futures</span>
         </div>
         <div className="text-[13px] text-[#7E947D]">
-          Youth Financial Literacy Event &middot; Parkland, FL &middot; A Parkland Chamber of Commerce initiative
+          Youth Financial Literacy Event &middot; Parkland, FL &middot; In partnership with the Parkland Chamber of Commerce &amp; MSD Investment Club
         </div>
       </div>
     </footer>

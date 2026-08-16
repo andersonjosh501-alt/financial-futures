@@ -3,20 +3,18 @@
 import PageShell from "@/components/PageShell";
 import HeroBackground from "@/components/HeroBackground";
 
-/* TODO: Replace with confirmed speakers */
 const SPEAKERS = [
-  { name: "Speaker TBD", role: "Financial Advisor", org: "Organization TBD", bio: "An experienced financial professional passionate about youth education and community empowerment." },
-  { name: "Speaker TBD", role: "Entrepreneur", org: "Organization TBD", bio: "A successful business owner dedicated to mentoring the next generation of innovators." },
-  { name: "Speaker TBD", role: "Educator", org: "Organization TBD", bio: "A passionate teacher who specializes in making financial concepts accessible and fun for young learners." },
-  { name: "Speaker TBD", role: "Investment Analyst", org: "Organization TBD", bio: "A finance professional who breaks down complex investment strategies into actionable steps." },
+  { name: "Josh Anderson", role: "Founding Director", org: "Financial Futures", bio: "Leads overall strategy and logistics. Josh's why is simple: 38% of Americans don't own stocks, and that statistic drives him to change the world through financial education." },
+  { name: "Michael Powell", role: "Curriculum Advisor & Co-founder", org: "Marjory Stoneman Douglas", bio: "A teacher with one goal: get every student he's ever taught a brokerage account before they graduate. Ensures content accuracy and age-appropriate delivery." },
+  { name: "Chamber Panelists", role: "Financial Professionals", org: "Parkland Chamber of Commerce", bio: "Local professionals who have actually built wealth and navigated the financial decisions most students won't face for another decade. That access doesn't exist in a classroom." },
+  { name: "Douglas Eaton", role: "Chamber Contact", org: "Eaton Financial Group", bio: "Community leader providing professional speaker network and co-sponsor credibility for Financial Futures through the Parkland Chamber of Commerce." },
 ];
 
-/* TODO: Replace with confirmed partners */
 const PARTNERS = [
-  { name: "Parkland Chamber of Commerce", type: "Community Organization" },
-  { name: "School District TBD", type: "Education Partner" },
-  { name: "Bank or Credit Union TBD", type: "Financial Partner" },
-  { name: "Corporate Sponsor TBD", type: "Sponsor" },
+  { name: "Parkland Chamber of Commerce", type: "Community Partner & Co-sponsor" },
+  { name: "MSD Investment Club", type: "Advertising & Logistics Partner" },
+  { name: "Anderson Accounting & Consulting", type: "Financial Sponsor — $300" },
+  { name: "Your Organization?", type: "Sponsorships from $200+" },
 ];
 
 export default function SpeakersPartners() {
@@ -44,7 +42,7 @@ export default function SpeakersPartners() {
                   Meet the mentors
                 </h2>
                 <p className="mt-2 mx-auto max-w-[520px] text-base text-muted">
-                  Speaker lineup is being finalized. Check back soon for announcements!
+                  The people behind Financial Futures — organizers and Chamber professionals who have actually built wealth.
                 </p>
               </div>
 
@@ -131,7 +129,7 @@ export default function SpeakersPartners() {
                   <p className="text-[15px] text-[#A9BBA8] mb-6">
                     Interested in sponsoring, partnering, or speaking at Financial Futures? We&apos;d love to hear from you.
                   </p>
-                  <a href="mailto:info@financialfutures.org" className="inline-block font-heading font-bold text-[15px] text-ink bg-gold-lt px-8 py-3.5 rounded-full shadow-[0_10px_24px_-8px_rgba(217,168,31,.6)]">
+                  <a href="mailto:Anderson.Josh501@gmail.com" className="inline-block font-heading font-bold text-[15px] text-ink bg-gold-lt px-8 py-3.5 rounded-full shadow-[0_10px_24px_-8px_rgba(217,168,31,.6)]">
                     Get in touch
                   </a>
                 </div>
