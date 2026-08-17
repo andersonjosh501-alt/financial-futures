@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import { useState } from "react";
 
 export default function Navbar({
@@ -14,15 +13,8 @@ export default function Navbar({
   return (
     <nav className="bg-paper border-b border-line sticky top-0 z-50">
       <div className="max-w-[1200px] mx-auto flex items-center justify-between px-6 lg:px-[34px] py-4">
-        <Link href="/" className="shrink-0" title="Back to home">
-          <Image
-            src="/logo.png"
-            alt="Financial Futures — Back to home"
-            width={220}
-            height={63}
-            className="h-[56px] md:h-[63px] w-auto"
-            priority
-          />
+        <Link href="/" className="shrink-0 font-heading font-bold text-[22px] tracking-tight text-dg hover:text-bg-green transition-colors" title="Back to home">
+          Financial <span className="text-bg-green">Futures</span>
         </Link>
 
         <div className="hidden md:flex items-center gap-[26px]">
