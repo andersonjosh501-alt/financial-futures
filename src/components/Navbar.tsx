@@ -14,13 +14,13 @@ export default function Navbar({
   return (
     <nav className="bg-paper border-b border-line sticky top-0 z-50">
       <div className="max-w-[1200px] mx-auto flex items-center justify-between px-6 lg:px-[34px] py-4">
-        <Link href="/" className="shrink-0">
+        <Link href="/" className="shrink-0" title="Back to home">
           <Image
             src="/logo.png"
-            alt="Financial Futures"
-            width={160}
-            height={46}
-            className="h-[46px] w-auto"
+            alt="Financial Futures — Back to home"
+            width={220}
+            height={63}
+            className="h-[56px] md:h-[63px] w-auto"
             priority
           />
         </Link>

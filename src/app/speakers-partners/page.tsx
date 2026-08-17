@@ -141,16 +141,16 @@ export default function SpeakersPartners() {
           <section className="bg-bg-green py-16 text-center">
             <div className="max-w-[1200px] mx-auto px-6 lg:px-[34px]">
               <h2 className="font-heading font-bold text-[34px] md:text-[42px] tracking-[-0.02em] text-dg-deep mb-2.5">
-                Your future self says thanks.
+                Your future self says thanks
               </h2>
               <p className="mx-auto max-w-[440px] text-[17px] text-dg-deep/85 mb-[26px]">
-                Seats are limited and it&apos;s completely free. Grab yours before they&apos;re gone.
+                Grab your seat before it&apos;s gone.
               </p>
               <button
                 onClick={openRegister}
-                className="font-heading font-bold text-[17px] text-white bg-dg-deep px-10 py-4 rounded-full shadow-[0_14px_30px_-12px_rgba(8,43,14,.6)] hover:bg-dg-deeper transition-colors"
+                className="font-heading font-bold text-[17px] text-white bg-dg-deep px-10 py-4 rounded-full shadow-[0_14px_30px_-12px_rgba(8,43,14,.6)] hover:bg-dg-deeper hover:-translate-y-0.5 hover:shadow-[0_18px_36px_-10px_rgba(8,43,14,.7)] transition-all duration-200"
               >
-                Register free
+                Register Here
               </button>
             </div>
           </section>
