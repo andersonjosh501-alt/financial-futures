@@ -102,7 +102,7 @@ export default function Home() {
             <div className="max-w-[1200px] mx-auto px-6 lg:px-[34px] pt-[74px] pb-[30px] text-center">
               <div className="font-heading font-semibold text-xs tracking-[.14em] uppercase text-gold">What you leave with</div>
               <h2 className="mt-3 font-heading font-bold text-[32px] md:text-[40px] leading-[1.08] tracking-[-0.02em] text-dg">
-                Three takeaways, no prior knowledge needed
+                Three Takeaways &mdash; No Prior Knowledge Needed
               </h2>
             </div>
             <div className="max-w-[960px] mx-auto grid grid-cols-1 sm:grid-cols-3 gap-[22px] px-6 lg:px-[34px] pb-[78px] pt-[22px]">
@@ -122,10 +122,10 @@ export default function Home() {
           <section className="bg-bg-green py-16 text-center">
             <div className="max-w-[1200px] mx-auto px-6 lg:px-[34px]">
               <h2 className="font-heading font-bold text-[34px] md:text-[42px] tracking-[-0.02em] text-dg-deep mb-2.5">
-                Your future self says thanks
+                Your Future Self Says Thanks
               </h2>
               <p className="mx-auto max-w-[440px] text-[17px] text-dg-deep/85 mb-[26px]">
-                Grab your seat before it&apos;s gone.
+                Grab your seat before it&apos;s gone
               </p>
               <button
                 onClick={openRegister}

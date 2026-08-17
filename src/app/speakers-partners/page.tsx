@@ -141,10 +141,10 @@ export default function SpeakersPartners() {
           <section className="bg-bg-green py-16 text-center">
             <div className="max-w-[1200px] mx-auto px-6 lg:px-[34px]">
               <h2 className="font-heading font-bold text-[34px] md:text-[42px] tracking-[-0.02em] text-dg-deep mb-2.5">
-                Your future self says thanks
+                Your Future Self Says Thanks
               </h2>
               <p className="mx-auto max-w-[440px] text-[17px] text-dg-deep/85 mb-[26px]">
-                Grab your seat before it&apos;s gone.
+                Grab your seat before it&apos;s gone
               </p>
               <button
                 onClick={openRegister}
