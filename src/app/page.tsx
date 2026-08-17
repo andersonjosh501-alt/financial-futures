@@ -51,7 +51,7 @@ export default function Home() {
           {/* HERO */}
           <section className="relative overflow-hidden bg-dg-deep">
             <HeroBackground tall />
-            <div className="relative max-w-[1200px] mx-auto px-6 lg:px-[34px] py-[78px] md:py-[84px]">
+            <div className="relative max-w-[1200px] mx-auto px-6 lg:px-[34px] pt-[40px] pb-[130px] md:pt-[46px] md:pb-[140px]">
               <div className="max-w-[720px]">
                 <h1 className="font-heading font-bold text-[42px] md:text-[62px] leading-[1.02] tracking-[-0.025em] text-white">
                   Start building wealth<br />
