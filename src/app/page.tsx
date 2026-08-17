@@ -100,7 +100,7 @@ export default function Home() {
           {/* VALUE PROPS */}
           <section className="bg-paper">
             <div className="max-w-[1200px] mx-auto px-6 lg:px-[34px] pt-[74px] pb-[30px] text-center">
-              <div className="font-heading font-semibold text-xs tracking-[.14em] uppercase text-gold">What you leave with</div>
+              <div className="font-heading font-bold text-[16px] md:text-[17px] tracking-[.16em] uppercase text-gold">What You Leave With</div>
               <h2 className="mt-3 font-heading font-bold text-[32px] md:text-[40px] leading-[1.08] tracking-[-0.02em] text-dg">
                 Three Takeaways &mdash; No Prior Knowledge Needed
               </h2>
