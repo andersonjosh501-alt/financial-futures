@@ -4,7 +4,7 @@ import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import RegistrationModal from "@/components/RegistrationModal";
-import HeroBackground from "@/components/HeroBackground";
+import StockTickerHero from "@/components/StockTickerHero";
 
 export default function EventDetails() {
   const [modalOpen, setModalOpen] = useState(false);
@@ -42,12 +42,12 @@ export default function EventDetails() {
     <>
       <Navbar onRegisterClick={() => setModalOpen(true)} />
       <main className="flex-1 bg-cream">
-        {/* COMPACT HERO */}
-        <section className="relative overflow-hidden bg-dg-deep py-[52px]">
-          <HeroBackground tall={false} />
+        {/* HERO — LIVE TICKER BACKDROP */}
+        <section className="relative overflow-hidden bg-dg-deep py-[72px] md:py-[92px]">
+          <StockTickerHero />
           <div className="relative max-w-[1200px] mx-auto px-6 lg:px-[34px]">
-            <div className="font-heading font-semibold text-xs tracking-[.12em] uppercase text-gold-lt">Event details</div>
-            <h1 className="mt-2.5 font-heading font-bold text-[36px] md:text-[44px] tracking-[-0.02em] text-white">
+            <div className="font-heading font-bold text-[13px] md:text-[15px] tracking-[.16em] uppercase text-gold-lt">Event Details</div>
+            <h1 className="mt-2.5 font-heading font-bold text-[36px] md:text-[52px] leading-[1.05] tracking-[-0.02em] text-white drop-shadow-[0_4px_12px_rgba(0,0,0,.4)]">
               Everything you need to know
             </h1>
           </div>
@@ -64,11 +64,20 @@ export default function EventDetails() {
                   { label: "Where", value: "MSD Library", sub: "" },
                   { label: "Who", value: "MSD Students Only", sub: "Grades 9–12 · Parents welcome" },
                   { label: "Cost", value: "Free", sub: "Gift bag included" },
-                ].map((card) => (
-                  <div key={card.label} className="bg-paper border border-line rounded-2xl p-6">
-                    <div className="font-heading font-semibold text-[11px] tracking-[.1em] uppercase text-gold">{card.label}</div>
-                    <div className="font-heading font-bold text-[22px] text-dg mt-2">{card.value}</div>
-                    <div className="text-sm text-muted mt-0.5">{card.sub}</div>
+                ].map((card, i) => (
+                  <div
+                    key={card.label}
+                    className="group"
+                    style={{
+                      animation: `float-card 4.5s ease-in-out ${i * 0.35}s infinite`,
+                      willChange: "transform",
+                    }}
+                  >
+                    <div className="bg-paper border border-line rounded-2xl p-6 shadow-[0_10px_28px_-18px_rgba(8,43,14,.35)] group-hover:scale-[1.03] group-hover:shadow-[0_22px_40px_-18px_rgba(8,43,14,.5)] group-hover:border-gold/40 transition-all duration-300 h-full">
+                      <div className="font-heading font-bold text-[11px] tracking-[.14em] uppercase text-gold">{card.label}</div>
+                      <div className="font-heading font-bold text-[22px] text-dg mt-2 group-hover:text-bg-green transition-colors duration-300">{card.value}</div>
+                      {card.sub && <div className="text-sm text-muted mt-0.5">{card.sub}</div>}
+                    </div>
                   </div>
                 ))}
               </div>
