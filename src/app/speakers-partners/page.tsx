@@ -1,7 +1,7 @@
 "use client";
 
 import PageShell from "@/components/PageShell";
-import HeroBackground from "@/components/HeroBackground";
+import NetworkHero from "@/components/NetworkHero";
 
 const SPEAKERS = [
   { name: "Speaker TBD", role: "To be announced", org: "Coming soon", bio: "We're finalizing our lineup of speakers. Check back soon to meet the professionals sharing their financial insights at Financial Futures." },
@@ -21,12 +21,12 @@ export default function SpeakersPartners() {
     <PageShell>
       {({ openRegister }) => (
         <>
-          {/* COMPACT HERO */}
-          <section className="relative overflow-hidden bg-dg-deep py-[52px]">
-            <HeroBackground tall={false} />
-            <div className="relative max-w-[1200px] mx-auto px-6 lg:px-[34px]">
-              <div className="font-heading font-semibold text-xs tracking-[.12em] uppercase text-gold-lt">Learn from the best</div>
-              <h1 className="mt-2.5 font-heading font-bold text-[36px] md:text-[44px] tracking-[-0.02em] text-white">
+          {/* NETWORK HERO */}
+          <section className="relative overflow-hidden bg-paper pt-[64px] pb-[56px]">
+            <NetworkHero />
+            <div className="relative max-w-[1200px] mx-auto px-6 lg:px-[34px] pointer-events-none">
+              <div className="font-heading font-semibold text-xs tracking-[.14em] uppercase text-gold">Learn from the best</div>
+              <h1 className="mt-2.5 font-heading font-bold text-[40px] md:text-[52px] tracking-[-0.02em] text-dg-deep">
                 Speakers &amp; Partners
               </h1>
             </div>
@@ -36,12 +36,12 @@ export default function SpeakersPartners() {
           <section className="bg-paper py-[74px]">
             <div className="max-w-[1200px] mx-auto px-6 lg:px-[34px]">
               <div className="text-center mb-10">
-                <div className="font-heading font-semibold text-xs tracking-[.14em] uppercase text-gold">Featured speakers</div>
+                <div className="font-heading font-semibold text-sm tracking-[.14em] uppercase text-gold">Featured Speakers</div>
                 <h2 className="mt-3 font-heading font-bold text-[32px] md:text-[40px] leading-[1.08] tracking-[-0.02em] text-dg">
-                  Meet the mentors
+                  Meet The Mentors
                 </h2>
-                <p className="mt-2 mx-auto max-w-[520px] text-base text-muted">
-                  The people behind Financial Futures — organizers and Chamber professionals who have actually built wealth.
+                <p className="mt-2 mx-auto max-w-[560px] text-base text-muted">
+                  The people behind Financial Futures, professionals who have built wealth and have a passion for sharing with the next generation.
                 </p>
               </div>
 
