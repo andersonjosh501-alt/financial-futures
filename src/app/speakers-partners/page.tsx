@@ -4,17 +4,16 @@ import PageShell from "@/components/PageShell";
 import HeroBackground from "@/components/HeroBackground";
 
 const SPEAKERS = [
-  { name: "Josh Anderson", role: "Founding Director", org: "Financial Futures", bio: "Leads overall strategy and logistics. Josh's why is simple: 38% of Americans don't own stocks, and that statistic drives him to change the world through financial education." },
-  { name: "Michael Powell", role: "Curriculum Advisor & Co-founder", org: "Marjory Stoneman Douglas", bio: "A teacher with one goal: get every student he's ever taught a brokerage account before they graduate. Ensures content accuracy and age-appropriate delivery." },
-  { name: "Chamber Panelists", role: "Financial Professionals", org: "Parkland Chamber of Commerce", bio: "Local professionals who have actually built wealth and navigated the financial decisions most students won't face for another decade. That access doesn't exist in a classroom." },
-  { name: "Douglas Eaton", role: "Chamber Contact", org: "Eaton Financial Group", bio: "Community leader providing professional speaker network and co-sponsor credibility for Financial Futures through the Parkland Chamber of Commerce." },
+  { name: "Speaker TBD", role: "To be announced", org: "Coming soon", bio: "We're finalizing our lineup of speakers. Check back soon to meet the professionals sharing their financial insights at Financial Futures." },
+  { name: "Speaker TBD", role: "To be announced", org: "Coming soon", bio: "We're finalizing our lineup of speakers. Check back soon to meet the professionals sharing their financial insights at Financial Futures." },
+  { name: "Speaker TBD", role: "To be announced", org: "Coming soon", bio: "We're finalizing our lineup of speakers. Check back soon to meet the professionals sharing their financial insights at Financial Futures." },
+  { name: "Speaker TBD", role: "To be announced", org: "Coming soon", bio: "We're finalizing our lineup of speakers. Check back soon to meet the professionals sharing their financial insights at Financial Futures." },
 ];
 
 const PARTNERS = [
-  { name: "Parkland Chamber of Commerce", type: "Community Partner & Co-sponsor" },
-  { name: "MSD Investment Club", type: "Advertising & Logistics Partner" },
-  { name: "Anderson Accounting & Consulting", type: "Financial Sponsor — $300" },
-  { name: "Your Organization?", type: "Sponsorships from $200+" },
+  { name: "Parkland Chamber of Commerce", type: "Partner" },
+  { name: "MSD Investment Club", type: "Partner" },
+  { name: "Anderson Accounting & Consulting", type: "Partner" },
 ];
 
 export default function SpeakersPartners() {
@@ -48,7 +47,11 @@ export default function SpeakersPartners() {
 
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[22px]">
                 {SPEAKERS.map((speaker, i) => (
-                  <div key={i} className="bg-paper border border-line rounded-[18px] overflow-hidden shadow-[0_12px_30px_-22px_rgba(8,43,14,.5)]">
+                  <div
+                    key={i}
+                    style={{ animationDelay: `${i * 0.6}s` }}
+                    className="animate-float-card bg-paper border border-line rounded-[18px] overflow-hidden shadow-[0_12px_30px_-22px_rgba(8,43,14,.5)] transition-[box-shadow,border-color] duration-300 hover:border-gold hover:shadow-[0_18px_36px_-18px_rgba(184,134,11,.5)] hover:[animation-play-state:paused]"
+                  >
                     <div className="h-44 bg-gradient-to-br from-dg to-dg-deep flex items-center justify-center">
                       <div className="w-20 h-20 rounded-full bg-white/15 flex items-center justify-center">
                         <svg className="w-10 h-10 text-white/50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -90,9 +93,9 @@ export default function SpeakersPartners() {
                 </p>
               </div>
 
-              <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
                 {PARTNERS.map((partner, i) => (
-                  <div key={i} className="bg-paper border border-line rounded-2xl p-6 flex flex-col items-center text-center shadow-[0_12px_30px_-22px_rgba(8,43,14,.3)]">
+                  <div key={i} className="bg-paper border border-line rounded-2xl p-6 flex flex-col items-center text-center shadow-[0_12px_30px_-22px_rgba(8,43,14,.3)] transition-all duration-300 hover:-translate-y-1.5 hover:border-gold hover:shadow-[0_18px_36px_-18px_rgba(184,134,11,.5)]">
                     <div className="w-14 h-14 rounded-[14px] bg-gradient-to-br from-dg to-dg-deep flex items-center justify-center shadow-[0_6px_14px_-6px_rgba(27,94,32,.6)] mb-4">
                       <svg className="w-7 h-7" viewBox="0 0 48 48" aria-hidden="true">
                         <path d="M24 12 L12 35 M24 12 L36 35 M12 35 L36 35" stroke="#B8860B" strokeWidth="2.6" strokeLinecap="round" />
@@ -106,33 +109,6 @@ export default function SpeakersPartners() {
                     <p className="text-xs text-gold mt-1">{partner.type}</p>
                   </div>
                 ))}
-              </div>
-            </div>
-          </section>
-
-          {/* BECOME A PARTNER */}
-          <section className="bg-paper py-16">
-            <div className="max-w-[700px] mx-auto px-6 lg:px-[34px]">
-              <div className="relative overflow-hidden bg-dg-deep rounded-[20px] p-10 text-center">
-                <svg width="100%" height="100%" className="absolute inset-0 opacity-40" aria-hidden="true">
-                  <defs>
-                    <pattern id="dotgrid2" width="26" height="26" patternUnits="userSpaceOnUse">
-                      <circle cx="2" cy="2" r="1.6" fill="#4CAF50" opacity=".22" />
-                    </pattern>
-                  </defs>
-                  <rect width="100%" height="100%" fill="url(#dotgrid2)" />
-                </svg>
-                <div className="relative">
-                  <h2 className="font-heading font-bold text-[26px] md:text-[30px] tracking-tight text-white mb-2">
-                    Become a partner or speaker
-                  </h2>
-                  <p className="text-[15px] text-[#A9BBA8] mb-6">
-                    Interested in sponsoring, partnering, or speaking at Financial Futures? We&apos;d love to hear from you.
-                  </p>
-                  <a href="mailto:Anderson.Josh501@gmail.com" className="inline-block font-heading font-bold text-[15px] text-ink bg-gold-lt px-8 py-3.5 rounded-full shadow-[0_10px_24px_-8px_rgba(217,168,31,.6)]">
-                    Get in touch
-                  </a>
-                </div>
               </div>
             </div>
           </section>
