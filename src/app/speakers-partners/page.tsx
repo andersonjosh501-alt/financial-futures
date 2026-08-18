@@ -25,8 +25,8 @@ export default function SpeakersPartners() {
           <div className="relative overflow-hidden bg-paper">
             <NetworkHero />
 
-            <section className="relative pt-[64px] pb-[36px]">
-              <div className="max-w-[1200px] mx-auto px-6 lg:px-[34px] pointer-events-none">
+            <section className="relative pt-[64px] pb-[36px] pointer-events-none">
+              <div className="max-w-[1200px] mx-auto px-6 lg:px-[34px]">
                 <div className="font-heading font-semibold text-xs tracking-[.14em] uppercase text-gold [text-shadow:0_0_16px_rgba(255,255,255,.9)]">Learn from the best</div>
                 <h1 className="mt-2.5 font-heading font-bold text-[40px] md:text-[52px] tracking-[-0.02em] text-dg-deep [text-shadow:0_0_20px_rgba(255,255,255,.95)]">
                   Speakers &amp; Partners
@@ -35,9 +35,9 @@ export default function SpeakersPartners() {
               </div>
             </section>
 
-            <section className="relative pb-[74px]">
+            <section className="relative pb-[74px] pointer-events-none">
               <div className="max-w-[1200px] mx-auto px-6 lg:px-[34px]">
-                <div className="text-center mb-10 pointer-events-none">
+                <div className="text-center mb-10">
                   <div className="font-heading font-semibold text-sm tracking-[.14em] uppercase text-gold [text-shadow:0_0_16px_rgba(255,255,255,.9)]">Featured Speakers</div>
                   <h2 className="mt-3 font-heading font-bold text-[32px] md:text-[40px] leading-[1.08] tracking-[-0.02em] text-dg [text-shadow:0_0_20px_rgba(255,255,255,.95)]">
                     Meet The Mentors
@@ -53,7 +53,7 @@ export default function SpeakersPartners() {
                   <div
                     key={i}
                     style={{ animationDelay: `${i * 0.6}s` }}
-                    className="animate-float-card bg-paper border border-line rounded-[18px] overflow-hidden shadow-[0_12px_30px_-22px_rgba(8,43,14,.5)] transition-[box-shadow,border-color] duration-300 hover:border-gold hover:shadow-[0_18px_36px_-18px_rgba(184,134,11,.5)] hover:[animation-play-state:paused]"
+                    className="pointer-events-auto animate-float-card bg-paper border border-line rounded-[18px] overflow-hidden shadow-[0_12px_30px_-22px_rgba(8,43,14,.5)] transition-[box-shadow,border-color] duration-300 hover:border-gold hover:shadow-[0_18px_36px_-18px_rgba(184,134,11,.5)] hover:[animation-play-state:paused]"
                   >
                     <div className="h-44 bg-gradient-to-br from-dg to-dg-deep flex items-center justify-center">
                       <div className="w-20 h-20 rounded-full bg-white/15 flex items-center justify-center">
