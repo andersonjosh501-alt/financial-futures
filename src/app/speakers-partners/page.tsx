@@ -21,29 +21,32 @@ export default function SpeakersPartners() {
     <PageShell>
       {({ openRegister }) => (
         <>
-          {/* NETWORK HERO */}
-          <section className="relative overflow-hidden bg-paper pt-[64px] pb-[56px]">
+          {/* NETWORK HERO + SPEAKERS (shared network background) */}
+          <div className="relative overflow-hidden bg-paper">
             <NetworkHero />
-            <div className="relative max-w-[1200px] mx-auto px-6 lg:px-[34px] pointer-events-none">
-              <div className="font-heading font-semibold text-xs tracking-[.14em] uppercase text-gold">Learn from the best</div>
-              <h1 className="mt-2.5 font-heading font-bold text-[40px] md:text-[52px] tracking-[-0.02em] text-dg-deep">
-                Speakers &amp; Partners
-              </h1>
-            </div>
-          </section>
 
-          {/* SPEAKERS */}
-          <section className="bg-paper py-[74px]">
-            <div className="max-w-[1200px] mx-auto px-6 lg:px-[34px]">
-              <div className="text-center mb-10">
-                <div className="font-heading font-semibold text-sm tracking-[.14em] uppercase text-gold">Featured Speakers</div>
-                <h2 className="mt-3 font-heading font-bold text-[32px] md:text-[40px] leading-[1.08] tracking-[-0.02em] text-dg">
-                  Meet The Mentors
-                </h2>
-                <p className="mt-2 mx-auto max-w-[560px] text-base text-muted">
-                  The people behind Financial Futures, professionals who have built wealth and have a passion for sharing with the next generation.
-                </p>
+            <section className="relative pt-[64px] pb-[36px]">
+              <div className="max-w-[1200px] mx-auto px-6 lg:px-[34px] pointer-events-none">
+                <div className="font-heading font-semibold text-xs tracking-[.14em] uppercase text-gold [text-shadow:0_0_16px_rgba(255,255,255,.9)]">Learn from the best</div>
+                <h1 className="mt-2.5 font-heading font-bold text-[40px] md:text-[52px] tracking-[-0.02em] text-dg-deep [text-shadow:0_0_20px_rgba(255,255,255,.95)]">
+                  Speakers &amp; Partners
+                </h1>
+                <div className="mt-4 h-[3px] w-[110px] rounded-full bg-gradient-to-r from-gold to-gold-lt shadow-[0_2px_10px_rgba(184,134,11,.35)]" />
               </div>
+            </section>
+
+            <section className="relative pb-[74px]">
+              <div className="max-w-[1200px] mx-auto px-6 lg:px-[34px]">
+                <div className="text-center mb-10 pointer-events-none">
+                  <div className="font-heading font-semibold text-sm tracking-[.14em] uppercase text-gold [text-shadow:0_0_16px_rgba(255,255,255,.9)]">Featured Speakers</div>
+                  <h2 className="mt-3 font-heading font-bold text-[32px] md:text-[40px] leading-[1.08] tracking-[-0.02em] text-dg [text-shadow:0_0_20px_rgba(255,255,255,.95)]">
+                    Meet The Mentors
+                  </h2>
+                  <div className="mx-auto mt-4 h-[3px] w-[90px] rounded-full bg-gradient-to-r from-gold to-gold-lt shadow-[0_2px_10px_rgba(184,134,11,.35)]" />
+                  <p className="mt-4 mx-auto max-w-[560px] text-base text-muted">
+                    The people behind Financial Futures, professionals who have built wealth and have a passion for sharing with the next generation.
+                  </p>
+                </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[22px]">
                 {SPEAKERS.map((speaker, i) => (
@@ -70,6 +73,7 @@ export default function SpeakersPartners() {
               </div>
             </div>
           </section>
+          </div>
 
           {/* WAVE DIVIDER */}
           <div className="relative leading-[0]">
@@ -84,11 +88,12 @@ export default function SpeakersPartners() {
           <section className="bg-cream py-[74px]">
             <div className="max-w-[1200px] mx-auto px-6 lg:px-[34px]">
               <div className="text-center mb-10">
-                <div className="font-heading font-semibold text-xs tracking-[.14em] uppercase text-gold">Our partners</div>
+                <div className="font-heading font-semibold text-sm tracking-[.14em] uppercase text-gold">Our Partners</div>
                 <h2 className="mt-3 font-heading font-bold text-[32px] md:text-[40px] leading-[1.08] tracking-[-0.02em] text-dg">
-                  Making it possible
+                  Making It Possible
                 </h2>
-                <p className="mt-2 mx-auto max-w-[520px] text-base text-muted">
+                <div className="mx-auto mt-4 h-[3px] w-[90px] rounded-full bg-gradient-to-r from-gold to-gold-lt shadow-[0_2px_10px_rgba(184,134,11,.35)]" />
+                <p className="mt-4 mx-auto max-w-[520px] text-base text-muted">
                   Financial Futures is made possible by the generous support of these organizations.
                 </p>
               </div>

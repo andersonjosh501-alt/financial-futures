@@ -5,28 +5,45 @@ import { useEffect, useMemo, useRef } from "react";
 type Node = { id: number; x: number; y: number; r: number };
 type Edge = { a: number; b: number };
 
+// Nodes distributed across a tall canvas.
+// Positioned to avoid the H1 headline (left, y~90-170) and the H2 heading
+// (centered, y~420-500), leaving clear space for text readability.
 const BASE_NODES: Node[] = [
-  { id: 0, x: 90, y: 60, r: 4 },
-  { id: 1, x: 190, y: 150, r: 5 },
-  { id: 2, x: 260, y: 55, r: 4 },
-  { id: 3, x: 340, y: 195, r: 3.5 },
-  { id: 4, x: 420, y: 95, r: 6 },
-  { id: 5, x: 510, y: 180, r: 4 },
-  { id: 6, x: 580, y: 50, r: 3.5 },
-  { id: 7, x: 640, y: 140, r: 5 },
-  { id: 8, x: 720, y: 210, r: 4 },
-  { id: 9, x: 780, y: 80, r: 6 },
-  { id: 10, x: 860, y: 165, r: 4 },
-  { id: 11, x: 940, y: 60, r: 5 },
-  { id: 12, x: 990, y: 200, r: 3.5 },
-  { id: 13, x: 1050, y: 110, r: 4 },
-  { id: 14, x: 1130, y: 175, r: 4 },
-  { id: 15, x: 1160, y: 60, r: 3.5 },
-  { id: 16, x: 30, y: 180, r: 3.5 },
-  { id: 17, x: 470, y: 40, r: 3.5 },
+  // Top band (hero) — avoids left-side title area, weighted to the right
+  { id: 0, x: 40, y: 45, r: 3.5 },
+  { id: 1, x: 590, y: 40, r: 4 },
+  { id: 2, x: 680, y: 120, r: 5 },
+  { id: 3, x: 770, y: 55, r: 3.5 },
+  { id: 4, x: 830, y: 175, r: 4 },
+  { id: 5, x: 900, y: 90, r: 6 },
+  { id: 6, x: 980, y: 175, r: 3.5 },
+  { id: 7, x: 1050, y: 60, r: 4 },
+  { id: 8, x: 1120, y: 145, r: 5 },
+  { id: 9, x: 1170, y: 55, r: 3.5 },
+  { id: 10, x: 520, y: 210, r: 3.5 },
+  { id: 11, x: 660, y: 230, r: 3.5 },
+
+  // Descending transition band
+  { id: 12, x: 90, y: 260, r: 4 },
+  { id: 13, x: 200, y: 320, r: 3.5 },
+  { id: 14, x: 340, y: 285, r: 4 },
+  { id: 15, x: 480, y: 335, r: 3.5 },
+  { id: 16, x: 640, y: 300, r: 3.5 },
+  { id: 17, x: 800, y: 340, r: 4 },
+  { id: 18, x: 950, y: 300, r: 3.5 },
+  { id: 19, x: 1090, y: 340, r: 4 },
+  { id: 20, x: 1160, y: 260, r: 3.5 },
+
+  // Lower band — outside the centered H2 clear zone (x 350-850)
+  { id: 21, x: 80, y: 430, r: 3.5 },
+  { id: 22, x: 180, y: 500, r: 3 },
+  { id: 23, x: 280, y: 445, r: 3.5 },
+  { id: 24, x: 900, y: 445, r: 3.5 },
+  { id: 25, x: 1010, y: 500, r: 3 },
+  { id: 26, x: 1110, y: 430, r: 3.5 },
 ];
 
-const CONNECT_DISTANCE = 180;
+const CONNECT_DISTANCE = 200;
 
 function computeEdges(nodes: Node[]): Edge[] {
   const edges: Edge[] = [];
@@ -41,6 +58,9 @@ function computeEdges(nodes: Node[]): Edge[] {
   }
   return edges;
 }
+
+const VIEW_W = 1200;
+const VIEW_H = 560;
 
 export default function NetworkHero() {
   const svgRef = useRef<SVGSVGElement>(null);
@@ -90,8 +110,8 @@ export default function NetworkHero() {
 
     function handleMove(e: MouseEvent) {
       const rect = svg!.getBoundingClientRect();
-      const x = ((e.clientX - rect.left) / rect.width) * 1200;
-      const y = ((e.clientY - rect.top) / rect.height) * 240;
+      const x = ((e.clientX - rect.left) / rect.width) * VIEW_W;
+      const y = ((e.clientY - rect.top) / rect.height) * VIEW_H;
       const glow = svg!.querySelector<SVGCircleElement>("#netMouseGlow");
       if (glow) {
         glow.setAttribute("cx", String(x));
@@ -116,9 +136,9 @@ export default function NetworkHero() {
   return (
     <svg
       ref={svgRef}
-      viewBox="0 0 1200 240"
-      preserveAspectRatio="xMidYMid slice"
-      className="absolute inset-0 w-full h-full pointer-events-auto"
+      viewBox={`0 0 ${VIEW_W} ${VIEW_H}`}
+      preserveAspectRatio="xMidYMin slice"
+      className="absolute inset-0 w-full h-full [mask-image:linear-gradient(to_bottom,black_0%,black_55%,transparent_100%)]"
       aria-hidden="true"
     >
       <defs>
@@ -134,7 +154,7 @@ export default function NetworkHero() {
 
       <circle id="netMouseGlow" cx="600" cy="120" r="150" fill="url(#netMouseGlowGrad)" opacity="0" style={{ transition: "opacity 0.4s" }} />
 
-      <g stroke="#B8860B" strokeWidth="1" opacity=".28">
+      <g stroke="#B8860B" strokeWidth="1" opacity=".26">
         {edges.map((e, i) => {
           const a = BASE_NODES[e.a];
           const b = BASE_NODES[e.b];
