@@ -20,9 +20,11 @@ export async function POST(request: Request) {
       );
     }
 
+    const normalizedPhone = String(phone).replace(/\D/g, "");
+
     const { error } = await supabase
       .from("registrations")
-      .insert([{ name, email, phone, age }]);
+      .insert([{ name, email, phone: normalizedPhone, age }]);
 
     if (error) {
       if (error.code === "23505") {
