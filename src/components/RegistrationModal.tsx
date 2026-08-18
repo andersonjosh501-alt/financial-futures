@@ -8,7 +8,7 @@ interface RegistrationModalProps {
 }
 
 export default function RegistrationModal({ open, onClose }: RegistrationModalProps) {
-  const [form, setForm] = useState({ name: "", email: "", age: "", school: "" });
+  const [form, setForm] = useState({ name: "", email: "", phone: "", age: "", school: "" });
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
   const [errorMsg, setErrorMsg] = useState("");
   const dialogRef = useRef<HTMLDialogElement>(null);
@@ -39,7 +39,7 @@ export default function RegistrationModal({ open, onClose }: RegistrationModalPr
         throw new Error(data.error || "Registration failed");
       }
       setStatus("success");
-      setForm({ name: "", email: "", age: "", school: "" });
+      setForm({ name: "", email: "", phone: "", age: "", school: "" });
     } catch (err) {
       setStatus("error");
       setErrorMsg(err instanceof Error ? err.message : "Something went wrong");
@@ -80,7 +80,7 @@ export default function RegistrationModal({ open, onClose }: RegistrationModalPr
                 </svg>
               </div>
               <h4 className="font-heading font-bold text-xl text-dg mb-2">You&apos;re in!</h4>
-              <p className="text-muted text-sm mb-5">We&apos;ll only email you about this event.</p>
+              <p className="text-muted text-sm mb-5">We&apos;ll only email or text you about this event.</p>
               <button onClick={handleClose} className="font-heading font-bold text-sm text-white bg-dg-deep px-8 py-3 rounded-full">
                 Done
               </button>
@@ -95,6 +95,11 @@ export default function RegistrationModal({ open, onClose }: RegistrationModalPr
               <div>
                 <label className="font-heading font-semibold text-xs text-ink">Email</label>
                 <input name="email" type="email" required value={form.email} onChange={handleChange}
+                  className="mt-1.5 w-full h-11 border border-line rounded-[10px] bg-[#FBFBF9] px-4 text-sm focus:outline-none focus:ring-2 focus:ring-bg-green focus:border-transparent" />
+              </div>
+              <div>
+                <label className="font-heading font-semibold text-xs text-ink">Phone number</label>
+                <input name="phone" type="tel" required value={form.phone} onChange={handleChange}
                   className="mt-1.5 w-full h-11 border border-line rounded-[10px] bg-[#FBFBF9] px-4 text-sm focus:outline-none focus:ring-2 focus:ring-bg-green focus:border-transparent" />
               </div>
               <div className="grid grid-cols-2 gap-3">
@@ -118,7 +123,7 @@ export default function RegistrationModal({ open, onClose }: RegistrationModalPr
                 className="mt-1.5 w-full font-heading font-bold text-base text-white bg-gold-lt py-[15px] rounded-xl shadow-[0_12px_24px_-10px_rgba(217,168,31,.6)] disabled:opacity-50 hover:bg-gold transition-colors">
                 {status === "submitting" ? "Confirming..." : "Confirm my spot"}
               </button>
-              <p className="text-center text-xs text-muted mt-1">We&apos;ll only email you about this event.</p>
+              <p className="text-center text-xs text-muted mt-1">We&apos;ll only email or text you about this event.</p>
             </form>
           )}
         </div>
