@@ -45,10 +45,9 @@ export default function EventDetails() {
         {/* HERO — LIVE TICKER BACKDROP */}
         <section className="relative overflow-hidden bg-dg-deep py-[72px] md:py-[92px]">
           <StockTickerHero />
-          <div className="relative max-w-[1200px] mx-auto px-6 lg:px-[34px]">
-            <div className="font-heading font-bold text-[13px] md:text-[15px] tracking-[.16em] uppercase text-gold-lt">Event Details</div>
-            <h1 className="mt-2.5 font-heading font-bold text-[36px] md:text-[52px] leading-[1.05] tracking-[-0.02em] text-white drop-shadow-[0_4px_12px_rgba(0,0,0,.4)]">
-              Everything you need to know
+          <div className="relative max-w-[1200px] mx-auto px-6 lg:px-[34px] text-center">
+            <h1 className="font-heading font-bold text-[42px] md:text-[60px] leading-[1.05] tracking-[-0.02em] text-white drop-shadow-[0_4px_12px_rgba(0,0,0,.4)]">
+              Everything You Need To Know
             </h1>
           </div>
         </section>
@@ -186,7 +185,7 @@ export default function EventDetails() {
             </div>
 
             {/* RIGHT: register form */}
-            <div className="bg-paper border border-line rounded-[20px] p-[30px] shadow-[0_24px_46px_-26px_rgba(8,43,14,.5)] lg:sticky lg:top-[84px]">
+            <div className="group bg-paper border border-line rounded-[20px] p-[30px] shadow-[0_24px_46px_-26px_rgba(8,43,14,.5)] hover:scale-[1.02] hover:shadow-[0_32px_60px_-24px_rgba(8,43,14,.55)] hover:border-gold/40 transition-all duration-300 lg:sticky lg:top-[84px]">
               {status === "success" ? (
                 <div className="text-center py-6">
                   <div className="w-14 h-14 bg-mist rounded-full flex items-center justify-center mx-auto mb-4">
@@ -202,7 +201,7 @@ export default function EventDetails() {
                   <span className="inline-flex items-center gap-2 bg-mist text-dg font-heading font-semibold text-xs px-3 py-1.5 rounded-full">
                     Free registration
                   </span>
-                  <h3 className="mt-4 mb-1 font-heading font-bold text-[26px] tracking-tight text-dg">Save your seat</h3>
+                  <h3 className="mt-4 mb-1 font-heading font-bold text-[26px] tracking-tight text-dg group-hover:text-bg-green transition-colors duration-300">Save your seat</h3>
                   <p className="text-sm text-muted mb-5">Takes under a minute.</p>
                   <form onSubmit={handleSubmit} className="flex flex-col gap-3">
                     <div>

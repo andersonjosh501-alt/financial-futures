@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useState } from "react";
 
 export default function Navbar({
@@ -9,22 +10,26 @@ export default function Navbar({
   onRegisterClick: () => void;
 }) {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const pathname = usePathname();
+
+  function tabClass(href: string) {
+    const active = pathname === href || pathname?.startsWith(href + "/");
+    return `relative font-heading font-bold text-[15px] tracking-wide uppercase transition-colors ${
+      active
+        ? "text-dg after:content-[''] after:absolute after:left-0 after:right-0 after:-bottom-1.5 after:h-[3px] after:rounded-full after:bg-gold-lt"
+        : "text-ink hover:text-bg-green"
+    }`;
+  }
 
   return (
     <nav className="bg-paper border-b border-line sticky top-0 z-50">
       <div className="max-w-[1200px] mx-auto grid grid-cols-[1fr_auto_1fr] items-center px-6 lg:px-[34px] py-4 gap-6">
         {/* LEFT NAV */}
         <div className="hidden md:flex items-center justify-end gap-[30px]">
-          <Link
-            href="/event-details"
-            className="font-heading font-bold text-[15px] tracking-wide uppercase text-ink hover:text-bg-green transition-colors"
-          >
+          <Link href="/event-details" className={tabClass("/event-details")}>
             The Event
           </Link>
-          <Link
-            href="/speakers-partners"
-            className="font-heading font-bold text-[15px] tracking-wide uppercase text-ink hover:text-bg-green transition-colors"
-          >
+          <Link href="/speakers-partners" className={tabClass("/speakers-partners")}>
             Speakers
           </Link>
         </div>
@@ -42,7 +47,7 @@ export default function Navbar({
         <div className="hidden md:flex items-center gap-[30px]">
           <Link
             href="/event-details#learn"
-            className="font-heading font-bold text-[15px] tracking-wide uppercase text-ink hover:text-bg-green transition-colors"
+            className="relative font-heading font-bold text-[15px] tracking-wide uppercase text-ink hover:text-bg-green transition-colors"
           >
             What You&apos;ll Learn
           </Link>
