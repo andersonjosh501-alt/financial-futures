@@ -52,54 +52,8 @@ export default function EventDetails() {
           </div>
         </section>
 
-        {/* TRANSITION BAND — dark green fades to cream with a lingering chart line */}
-        <div className="relative h-[120px] md:h-[150px] overflow-hidden">
-          <div
-            className="absolute inset-0"
-            style={{
-              background:
-                "linear-gradient(180deg, #0E3B14 0%, #1E4A26 22%, #4E6B4D 52%, #A8B8A2 78%, #F6F4EC 100%)",
-            }}
-          />
-          {/* dot spillover from ticker area, fading down */}
-          <div
-            className="absolute inset-0 opacity-40"
-            style={{
-              backgroundImage:
-                "radial-gradient(circle, #4CAF50 1px, transparent 1.6px)",
-              backgroundSize: "28px 28px",
-              WebkitMaskImage:
-                "linear-gradient(to bottom, black 0%, transparent 65%)",
-              maskImage: "linear-gradient(to bottom, black 0%, transparent 65%)",
-            }}
-          />
-          {/* the ticker's chart line, arcing down into cream */}
-          <svg
-            viewBox="0 0 1200 150"
-            preserveAspectRatio="none"
-            className="absolute inset-0 w-full h-full"
-            aria-hidden="true"
-          >
-            <defs>
-              <linearGradient id="fadeLine" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0" stopColor="#D9A81F" stopOpacity=".65" />
-                <stop offset="1" stopColor="#D9A81F" stopOpacity="0" />
-              </linearGradient>
-            </defs>
-            <path
-              d="M0 40 C300 25 550 55 750 45 C920 37 1050 60 1200 48"
-              fill="none"
-              stroke="url(#fadeLine)"
-              strokeWidth="2.2"
-              strokeLinecap="round"
-            />
-            <circle cx="750" cy="45" r="4" fill="#D9A81F" opacity=".7" />
-            <circle cx="1050" cy="60" r="3" fill="#D9A81F" opacity=".5" />
-          </svg>
-        </div>
-
         {/* TWO COLUMN: DETAILS + REGISTER */}
-        <section className="relative overflow-hidden -mt-[40px] md:-mt-[50px] pt-[40px] md:pt-[50px] pb-11 md:pb-[44px]">
+        <section className="relative overflow-hidden py-11 md:py-[44px]">
           {/* faint dot grid across the whole cream section */}
           <div
             className="absolute inset-0 opacity-[.55] pointer-events-none"
@@ -109,34 +63,85 @@ export default function EventDetails() {
               backgroundSize: "28px 28px",
             }}
           />
-          {/* corner watermark icons */}
-          <div className="absolute top-6 left-4 md:top-8 md:left-8 opacity-[.06] pointer-events-none">
-            <svg width="86" height="86" viewBox="0 0 100 100" aria-hidden="true">
-              <circle cx="30" cy="30" r="10" fill="none" stroke="#1B5E20" strokeWidth="6" />
-              <circle cx="70" cy="70" r="10" fill="none" stroke="#1B5E20" strokeWidth="6" />
-              <line x1="22" y1="78" x2="78" y2="22" stroke="#1B5E20" strokeWidth="6" strokeLinecap="round" />
-            </svg>
-          </div>
-          <div className="absolute top-6 right-4 md:top-8 md:right-8 opacity-[.07] pointer-events-none">
-            <svg width="88" height="88" viewBox="0 0 100 100" aria-hidden="true">
-              <path d="M15 78 L38 55 L55 68 L88 22" fill="none" stroke="#B8860B" strokeWidth="6" strokeLinecap="round" strokeLinejoin="round" />
-              <polyline points="66,22 88,22 88,44" fill="none" stroke="#B8860B" strokeWidth="6" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-          </div>
-          <div className="absolute bottom-8 left-4 md:bottom-10 md:left-8 opacity-[.06] pointer-events-none">
-            <svg width="82" height="82" viewBox="0 0 100 100" aria-hidden="true">
-              <circle cx="50" cy="50" r="34" fill="none" stroke="#1B5E20" strokeWidth="6" />
-              <text x="50" y="66" textAnchor="middle" fontSize="46" fontWeight="800" fill="#1B5E20" fontFamily="serif">$</text>
-            </svg>
-          </div>
-          <div className="absolute bottom-8 right-4 md:bottom-10 md:right-8 opacity-[.07] pointer-events-none">
-            <svg width="90" height="90" viewBox="0 0 100 100" aria-hidden="true">
-              <rect x="14" y="60" width="14" height="26" rx="2" fill="#B8860B" />
-              <rect x="34" y="46" width="14" height="40" rx="2" fill="#B8860B" />
-              <rect x="54" y="32" width="14" height="54" rx="2" fill="#B8860B" />
-              <rect x="74" y="18" width="14" height="68" rx="2" fill="#B8860B" />
-            </svg>
-          </div>
+
+          {/* GOLD CHART LINE — arcs behind the cards */}
+          <svg
+            viewBox="0 0 1200 700"
+            preserveAspectRatio="none"
+            className="absolute inset-0 w-full h-full pointer-events-none"
+            aria-hidden="true"
+          >
+            <defs>
+              <linearGradient id="cardsChartLine" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0" stopColor="#D9A81F" stopOpacity="0" />
+                <stop offset=".15" stopColor="#D9A81F" stopOpacity=".55" />
+                <stop offset=".85" stopColor="#B8860B" stopOpacity=".55" />
+                <stop offset="1" stopColor="#B8860B" stopOpacity="0" />
+              </linearGradient>
+            </defs>
+            <path
+              d="M0 460 C220 380 380 540 620 420 C820 320 950 500 1200 360"
+              fill="none"
+              stroke="url(#cardsChartLine)"
+              strokeWidth="2.5"
+              strokeLinecap="round"
+            />
+            <circle cx="380" cy="510" r="5" fill="#D9A81F" opacity=".55" />
+            <circle cx="620" cy="420" r="6" fill="#D9A81F" opacity=".7" />
+            <circle cx="950" cy="465" r="5" fill="#B8860B" opacity=".55" />
+          </svg>
+
+          {/* LEFT SIDE FLOATING ORBS */}
+          <div
+            className="absolute top-16 left-[2%] w-14 h-14 rounded-full pointer-events-none"
+            style={{
+              background: "radial-gradient(circle at 30% 30%, #F0DFA6, #D9A81F 65%, transparent 100%)",
+              boxShadow: "0 6px 20px -4px rgba(217,168,31,.35)",
+              animation: "float-orb 7s ease-in-out infinite",
+            }}
+          />
+          <div
+            className="absolute top-[38%] left-[4%] w-8 h-8 rounded-full pointer-events-none"
+            style={{
+              background: "radial-gradient(circle at 30% 30%, #6FCF73, #4CAF50 60%, transparent 100%)",
+              boxShadow: "0 4px 14px -3px rgba(76,175,80,.35)",
+              animation: "float-orb 5.5s ease-in-out 1.2s infinite",
+            }}
+          />
+          <div
+            className="absolute bottom-24 left-[3%] w-10 h-10 rounded-full pointer-events-none"
+            style={{
+              background: "radial-gradient(circle at 30% 30%, #F0DFA6, #B8860B 65%, transparent 100%)",
+              boxShadow: "0 5px 16px -3px rgba(184,134,11,.35)",
+              animation: "float-orb 8s ease-in-out 2s infinite",
+            }}
+          />
+
+          {/* RIGHT SIDE FLOATING ORBS */}
+          <div
+            className="absolute top-24 right-[2%] w-12 h-12 rounded-full pointer-events-none"
+            style={{
+              background: "radial-gradient(circle at 30% 30%, #A8DFAA, #4CAF50 65%, transparent 100%)",
+              boxShadow: "0 5px 18px -4px rgba(76,175,80,.3)",
+              animation: "float-orb 6.5s ease-in-out .5s infinite",
+            }}
+          />
+          <div
+            className="absolute top-[42%] right-[4%] w-6 h-6 rounded-full pointer-events-none"
+            style={{
+              background: "radial-gradient(circle at 30% 30%, #F0DFA6, #D9A81F 60%, transparent 100%)",
+              boxShadow: "0 3px 12px -2px rgba(217,168,31,.4)",
+              animation: "float-orb 5s ease-in-out 1.6s infinite",
+            }}
+          />
+          <div
+            className="absolute bottom-32 right-[3%] w-11 h-11 rounded-full pointer-events-none"
+            style={{
+              background: "radial-gradient(circle at 30% 30%, #F0DFA6, #B8860B 65%, transparent 100%)",
+              boxShadow: "0 5px 16px -3px rgba(184,134,11,.35)",
+              animation: "float-orb 7.5s ease-in-out .8s infinite",
+            }}
+          />
 
           <div className="relative max-w-[1200px] mx-auto px-6 lg:px-[34px]">
           <div className="grid grid-cols-1 lg:grid-cols-[1.35fr_1fr] gap-[26px] items-start">
