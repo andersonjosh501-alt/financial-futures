@@ -8,7 +8,7 @@ import HeroBackground from "@/components/HeroBackground";
 
 export default function EventDetails() {
   const [modalOpen, setModalOpen] = useState(false);
-  const [form, setForm] = useState({ name: "", email: "", phone: "", age: "", school: "" });
+  const [form, setForm] = useState({ name: "", email: "", phone: "", age: "" });
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
   const [errorMsg, setErrorMsg] = useState("");
 
@@ -31,7 +31,7 @@ export default function EventDetails() {
         throw new Error(data.error || "Registration failed");
       }
       setStatus("success");
-      setForm({ name: "", email: "", phone: "", age: "", school: "" });
+      setForm({ name: "", email: "", phone: "", age: "" });
     } catch (err) {
       setStatus("error");
       setErrorMsg(err instanceof Error ? err.message : "Something went wrong");
@@ -61,7 +61,7 @@ export default function EventDetails() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {[
                   { label: "When", value: "October 20", sub: "6:00 – 7:00 PM" },
-                  { label: "Where", value: "MSD Library", sub: "Marjory Stoneman Douglas HS" },
+                  { label: "Where", value: "MSD Library", sub: "" },
                   { label: "Who", value: "MSD Students Only", sub: "Grades 9–12 · Parents welcome" },
                   { label: "Cost", value: "Free", sub: "Gift bag included" },
                 ].map((card) => (
@@ -126,17 +126,10 @@ export default function EventDetails() {
                       <input name="phone" type="tel" required value={form.phone} onChange={handleChange}
                         className="mt-1.5 w-full h-11 border border-line rounded-[10px] bg-[#FBFBF9] px-4 text-sm focus:outline-none focus:ring-2 focus:ring-bg-green focus:border-transparent" />
                     </div>
-                    <div className="grid grid-cols-2 gap-3">
-                      <div>
-                        <label className="font-heading font-semibold text-xs text-ink">Grade</label>
-                        <input name="age" type="text" required value={form.age} onChange={handleChange}
-                          className="mt-1.5 w-full h-11 border border-line rounded-[10px] bg-[#FBFBF9] px-4 text-sm focus:outline-none focus:ring-2 focus:ring-bg-green focus:border-transparent" />
-                      </div>
-                      <div>
-                        <label className="font-heading font-semibold text-xs text-ink">School</label>
-                        <input name="school" type="text" required value={form.school} onChange={handleChange}
-                          className="mt-1.5 w-full h-11 border border-line rounded-[10px] bg-[#FBFBF9] px-4 text-sm focus:outline-none focus:ring-2 focus:ring-bg-green focus:border-transparent" />
-                      </div>
+                    <div>
+                      <label className="font-heading font-semibold text-xs text-ink">Grade</label>
+                      <input name="age" type="text" required value={form.age} onChange={handleChange}
+                        className="mt-1.5 w-full h-11 border border-line rounded-[10px] bg-[#FBFBF9] px-4 text-sm focus:outline-none focus:ring-2 focus:ring-bg-green focus:border-transparent" />
                     </div>
 
                     {status === "error" && (
