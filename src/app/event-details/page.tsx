@@ -6,51 +6,6 @@ import Footer from "@/components/Footer";
 import RegistrationModal from "@/components/RegistrationModal";
 import StockTickerHero from "@/components/StockTickerHero";
 
-const SEGMENTS = [
-  {
-    num: "01",
-    title: "Misconceptions Around Investing",
-    goal: "Dismantling the myths that keep people out of the market.",
-    questions: [
-      "Is investing basically gambling? Where does that comparison fall apart?",
-      "As a high schooler, is it better to invest your money or save it?",
-      "How much do you actually need saved before you start?",
-      "What should you invest in first, and where do you find reliable research?",
-    ],
-  },
-  {
-    num: "02",
-    title: "Early Math: The Power of Compounding",
-    goal: "Making the numbers real. This is the most important realization of the night.",
-    questions: [
-      "What does waiting until your first job after college actually cost you?",
-      "Why do 38% of Americans own no investments, and how do you avoid that?",
-      "Warren Buffett made 99% of his wealth after 50. What does that tell us?",
-      "What does $100 a month look like in 10, 20, and 40 years?",
-    ],
-  },
-  {
-    num: "03",
-    title: "How To Do It: Accounts & Tools",
-    goal: "Leaving with exactly what to do tomorrow. Concrete, specific, no jargon.",
-    questions: [
-      "Which companies offer investment accounts, and how do they really differ?",
-      "Brokerage, Roth IRA, IRA, 401(k). What is each one actually for?",
-      "What can you invest in? ETFs, dividends, fixed income, and beyond.",
-      "The exact steps to invest your next dollar, starting tonight.",
-    ],
-  },
-];
-
-const AGENDA = [
-  { time: "0:00", title: "Warm-Up", desc: "Your questions from the sign-up form, answered live by the panel. Tables build one more together." },
-  { time: "0:15", title: "Draw Wealth", desc: "Five minutes to draw what wealth looks like to you. The answer most people miss is time and freedom." },
-  { time: "0:25", title: "Why This Matters", desc: "Josh on why he invests, the generational wealth perspective, and the gap sitting in front of you." },
-  { time: "0:30", title: "Chamber Panel", desc: "Three segments, twelve questions, real answers from professionals who have done it.", featured: true },
-  { time: "1:00", title: "Live Demo", desc: "An investment account opened and a trade placed in real time, start to finish." },
-  { time: "1:10", title: "Close & Gift Bags", desc: "Resource packet, next-steps brochure, and a survey for a shot at free advisor consultations." },
-];
-
 export default function EventDetails() {
   const [modalOpen, setModalOpen] = useState(false);
   const [form, setForm] = useState({ name: "", email: "", phone: "", age: "" });
@@ -292,84 +247,6 @@ export default function EventDetails() {
           </div>
         </section>
 
-        {/* WHAT YOU'LL LEARN */}
-        <section id="learn" className="relative bg-dg-deep overflow-hidden py-[74px] md:py-[86px]">
-          <div
-            className="absolute inset-0 opacity-50 pointer-events-none"
-            style={{
-              backgroundImage: "radial-gradient(circle, rgba(76,175,80,.22) 1.6px, transparent 1.6px)",
-              backgroundSize: "26px 26px",
-            }}
-          />
-          <div className="relative max-w-[1100px] mx-auto px-6 lg:px-[34px]">
-            <div className="text-center mb-12">
-              <div className="font-heading font-bold text-[13px] md:text-[15px] tracking-[.16em] uppercase text-gold-lt">The Panel</div>
-              <h2 className="mt-3 font-heading font-bold text-[34px] md:text-[46px] leading-[1.06] tracking-[-0.02em] text-white">
-                What You&apos;ll Learn
-              </h2>
-              <p className="mt-4 mx-auto max-w-[600px] text-[17px] leading-relaxed text-[#C9D6C7]">
-                Three segments. Twelve questions. Answered by professionals who have actually built wealth &mdash; with a sense of urgency, not a lecture.
-              </p>
-            </div>
-
-            <div className="flex flex-col gap-5">
-              {SEGMENTS.map((seg) => (
-                <div
-                  key={seg.num}
-                  className="group rounded-[18px] border border-white/10 bg-white/5 p-7 md:p-8 hover:bg-white/[.08] hover:border-gold-lt/40 transition-all duration-300"
-                >
-                  <div className="flex flex-col md:flex-row md:items-start gap-5 md:gap-8">
-                    <div className="flex-none">
-                      <div className="w-[52px] h-[52px] rounded-2xl bg-gradient-to-br from-gold-lt to-gold flex items-center justify-center font-heading font-bold text-[20px] text-dg-deep shadow-[0_8px_18px_-8px_rgba(217,168,31,.7)] group-hover:scale-105 transition-transform duration-300">
-                        {seg.num}
-                      </div>
-                    </div>
-                    <div className="flex-1">
-                      <h3 className="font-heading font-bold text-[21px] md:text-[24px] text-white leading-tight">{seg.title}</h3>
-                      <p className="mt-1.5 text-[15px] text-gold-pale/85 italic">{seg.goal}</p>
-                      <div className="mt-5 grid grid-cols-1 sm:grid-cols-2 gap-x-7 gap-y-3">
-                        {seg.questions.map((q, qi) => (
-                          <div key={qi} className="flex gap-3 items-start">
-                            <span className="flex-none mt-[7px] w-[6px] h-[6px] rounded-full bg-bg-green" />
-                            <span className="text-[14.5px] leading-relaxed text-[#B9C9B8]">{q}</span>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            {/* RUN OF SHOW */}
-            <div className="mt-16">
-              <div className="text-center mb-9">
-                <div className="font-heading font-bold text-[13px] md:text-[15px] tracking-[.16em] uppercase text-gold-lt">Run Of Show</div>
-                <h3 className="mt-3 font-heading font-bold text-[28px] md:text-[34px] tracking-[-0.02em] text-white">
-                  How The Night Goes
-                </h3>
-              </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {AGENDA.map((item) => (
-                  <div
-                    key={item.title}
-                    className={
-                      item.featured
-                        ? "flex gap-4 rounded-[14px] p-[22px_24px] border bg-[rgba(217,168,31,.12)] border-[rgba(217,168,31,.35)] md:col-span-2 hover:bg-[rgba(217,168,31,.16)] transition-colors duration-300"
-                        : "flex gap-4 rounded-[14px] p-[22px_24px] border bg-white/5 border-white/10 hover:bg-white/[.08] transition-colors duration-300"
-                    }
-                  >
-                    <span className="flex-none font-heading font-bold text-[15px] text-gold-lt tabular-nums pt-0.5">{item.time}</span>
-                    <div>
-                      <div className="font-heading font-bold text-[17px] text-white">{item.title}</div>
-                      <div className={item.featured ? "text-sm mt-1 text-[#D8C58A]" : "text-sm mt-1 text-[#A9BBA8]"}>{item.desc}</div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
       </main>
       <Footer />
       <RegistrationModal open={modalOpen} onClose={() => setModalOpen(false)} />

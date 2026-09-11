@@ -45,10 +45,7 @@ export default function Navbar({
 
         {/* RIGHT NAV */}
         <div className="hidden md:flex items-center gap-[30px]">
-          <Link
-            href="/event-details#learn"
-            className="relative font-heading font-bold text-[15px] tracking-wide uppercase text-ink hover:text-bg-green transition-colors"
-          >
+          <Link href="/what-youll-learn" className={tabClass("/what-youll-learn")}>
             What You&apos;ll Learn
           </Link>
           <button
@@ -83,7 +80,7 @@ export default function Navbar({
           <Link href="/speakers-partners" className="block py-2 font-heading font-bold text-sm uppercase tracking-wide text-ink" onClick={() => setMobileOpen(false)}>
             Speakers
           </Link>
-          <Link href="/event-details#learn" className="block py-2 font-heading font-bold text-sm uppercase tracking-wide text-ink" onClick={() => setMobileOpen(false)}>
+          <Link href="/what-youll-learn" className="block py-2 font-heading font-bold text-sm uppercase tracking-wide text-ink" onClick={() => setMobileOpen(false)}>
             What You&apos;ll Learn
           </Link>
           <button
