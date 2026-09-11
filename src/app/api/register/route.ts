@@ -4,18 +4,11 @@ import { supabase } from "@/lib/supabase";
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-    const { name, email, phone, age } = body;
+    const { name, email, phone } = body;
 
-    if (!name || !email || !phone || !age) {
+    if (!name || !email || !phone) {
       return NextResponse.json(
         { error: "All fields are required" },
-        { status: 400 }
-      );
-    }
-
-    if (typeof age !== "number" || age < 5 || age > 25) {
-      return NextResponse.json(
-        { error: "Age must be between 5 and 25" },
         { status: 400 }
       );
     }
@@ -24,9 +17,10 @@ export async function POST(request: Request) {
 
     const { error } = await supabase
       .from("registrations")
-      .insert([{ name, email, phone: normalizedPhone, age }]);
+      .insert([{ name, email, phone: normalizedPhone }]);
 
     if (error) {
+      console.error("[register] Supabase insert error:", error);
       if (error.code === "23505") {
         return NextResponse.json(
           { error: "This email is already registered" },
@@ -37,7 +31,8 @@ export async function POST(request: Request) {
     }
 
     return NextResponse.json({ success: true }, { status: 201 });
-  } catch {
+  } catch (err) {
+    console.error("[register] Unexpected error:", err);
     return NextResponse.json(
       { error: "Registration failed. Please try again." },
       { status: 500 }

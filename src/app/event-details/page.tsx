@@ -8,7 +8,7 @@ import StockTickerHero from "@/components/StockTickerHero";
 
 export default function EventDetails() {
   const [modalOpen, setModalOpen] = useState(false);
-  const [form, setForm] = useState({ name: "", email: "", phone: "", age: "" });
+  const [form, setForm] = useState({ name: "", email: "", phone: "" });
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
   const [errorMsg, setErrorMsg] = useState("");
 
@@ -24,14 +24,14 @@ export default function EventDetails() {
       const res = await fetch("/api/register", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...form, age: parseInt(form.age, 10) }),
+        body: JSON.stringify(form),
       });
       if (!res.ok) {
         const data = await res.json();
         throw new Error(data.error || "Registration failed");
       }
       setStatus("success");
-      setForm({ name: "", email: "", phone: "", age: "" });
+      setForm({ name: "", email: "", phone: "" });
     } catch (err) {
       setStatus("error");
       setErrorMsg(err instanceof Error ? err.message : "Something went wrong");
@@ -224,12 +224,6 @@ export default function EventDetails() {
                       <input name="phone" type="tel" required value={form.phone} onChange={handleChange}
                         className="mt-1.5 w-full h-11 border border-line rounded-[10px] bg-[#FBFBF9] px-4 text-sm focus:outline-none focus:ring-2 focus:ring-bg-green focus:border-transparent" />
                     </div>
-                    <div>
-                      <label className="font-heading font-semibold text-xs text-ink">Grade</label>
-                      <input name="age" type="text" required value={form.age} onChange={handleChange}
-                        className="mt-1.5 w-full h-11 border border-line rounded-[10px] bg-[#FBFBF9] px-4 text-sm focus:outline-none focus:ring-2 focus:ring-bg-green focus:border-transparent" />
-                    </div>
-
                     {status === "error" && (
                       <p className="text-red-600 text-sm bg-red-50 p-3 rounded-lg">{errorMsg}</p>
                     )}
