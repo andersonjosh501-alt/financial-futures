@@ -7,7 +7,7 @@ export const SOCIALS: { key: SocialKey; label: string; url: string }[] = [
   { key: "tiktok", label: "TikTok", url: "" },
   { key: "youtube", label: "YouTube", url: "" },
   { key: "linkedin", label: "LinkedIn", url: "" },
-  { key: "email", label: "Email", url: "mailto:Anderson.Josh501@gmail.com" },
+  { key: "email", label: "Email", url: "mailto:financialfutures01@gmail.com" },
 ];
 
-export const CONTACT_EMAIL = "Anderson.Josh501@gmail.com";
+export const CONTACT_EMAIL = "financialfutures01@gmail.com";
