@@ -6,10 +6,20 @@ import SocialIcon from "@/components/SocialIcon";
 
 // Paste each speaker's LinkedIn profile URL into linkedin to show the button.
 const SPEAKERS = [
-  { name: "Speaker TBD", role: "To be announced", org: "Coming soon", bio: "We're finalizing our lineup of speakers. Check back soon to meet the professionals sharing their financial insights at Financial Futures.", linkedin: "" },
-  { name: "Speaker TBD", role: "To be announced", org: "Coming soon", bio: "We're finalizing our lineup of speakers. Check back soon to meet the professionals sharing their financial insights at Financial Futures.", linkedin: "" },
-  { name: "Speaker TBD", role: "To be announced", org: "Coming soon", bio: "We're finalizing our lineup of speakers. Check back soon to meet the professionals sharing their financial insights at Financial Futures.", linkedin: "" },
-  { name: "Speaker TBD", role: "To be announced", org: "Coming soon", bio: "We're finalizing our lineup of speakers. Check back soon to meet the professionals sharing their financial insights at Financial Futures.", linkedin: "" },
+  {
+    name: "Douglas Eaton",
+    role: "Managing Principal",
+    org: "Parallel Advisors",
+    bio: [
+      "Douglas Eaton is a Managing Principal at Parallel Advisors, an independent fiduciary wealth management firm overseeing more than $12 billion in assets.",
+      "For more than three decades, Doug has helped individuals, families, and business owners navigate important financial decisions and life transitions. His work centers on helping clients feel heard, gain clarity, make thoughtful decisions, and stay focused on the people and priorities that matter most.",
+      "A fee-only fiduciary advisor, Doug believes financial planning is about far more than investments. It is about helping people worry less about money and devote more of their time and energy to the people, experiences, and causes that matter most.",
+      "Doug is a husband of 27 years, a father, fitness enthusiast, a 5-time marathoner, an active community stakeholder and volunteer, and a lifelong Miami Dolphins fan.",
+    ],
+    linkedin: "",
+  },
+  { name: "Speaker TBD", role: "To be announced", org: "Coming soon", bio: ["We're finalizing our lineup of speakers. Check back soon to meet the professionals sharing their financial insights at Financial Futures."], linkedin: "" },
+  { name: "Speaker TBD", role: "To be announced", org: "Coming soon", bio: ["We're finalizing our lineup of speakers. Check back soon to meet the professionals sharing their financial insights at Financial Futures."], linkedin: "" },
 ];
 
 const PARTNERS = [
@@ -50,19 +60,23 @@ export default function SpeakersPartners() {
                   </p>
                 </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[22px]">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[22px]">
                 {SPEAKERS.map((speaker, i) => (
                   <div
                     key={i}
                     style={{ animationDelay: `${i * 0.6}s` }}
                     className="pointer-events-auto animate-float-card bg-paper border border-line rounded-[18px] overflow-hidden shadow-[0_12px_30px_-22px_rgba(8,43,14,.5)] transition-[box-shadow,border-color] duration-300 hover:border-gold hover:shadow-[0_18px_36px_-18px_rgba(184,134,11,.5)] hover:[animation-play-state:paused]"
                   >
-                    <div className="h-[6px] bg-gradient-to-r from-dg via-bg-green to-gold-lt" aria-hidden="true" />
+                    <div className="h-[6px] bg-gradient-to-r from-dg-deep via-dg to-bg-green" aria-hidden="true" />
                     <div className="p-5 flex flex-col h-[calc(100%-6px)]">
                       <h3 className="font-heading font-bold text-[17px] text-ink">{speaker.name}</h3>
                       <p className="font-heading font-semibold text-xs text-gold mt-0.5">{speaker.role}</p>
                       <p className="text-xs text-muted">{speaker.org}</p>
-                      <p className="text-[14px] leading-relaxed text-muted mt-3">{speaker.bio}</p>
+                      <div className="mt-3 flex flex-col gap-2.5">
+                        {speaker.bio.map((para, pi) => (
+                          <p key={pi} className="text-[14px] leading-relaxed text-muted">{para}</p>
+                        ))}
+                      </div>
                       {speaker.linkedin ? (
                         <a
                           href={speaker.linkedin}
