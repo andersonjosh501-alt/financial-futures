@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
+import { validateRegistration } from "@/lib/validateRegistration";
 
 interface RegistrationModalProps {
   open: boolean;
@@ -26,6 +27,12 @@ export default function RegistrationModal({ open, onClose }: RegistrationModalPr
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
+    const invalid = validateRegistration(form);
+    if (invalid) {
+      setStatus("error");
+      setErrorMsg(invalid);
+      return;
+    }
     setStatus("submitting");
     setErrorMsg("");
     try {
@@ -86,7 +93,7 @@ export default function RegistrationModal({ open, onClose }: RegistrationModalPr
               </button>
             </div>
           ) : (
-            <form onSubmit={handleSubmit} className="flex flex-col gap-3">
+            <form onSubmit={handleSubmit} noValidate className="flex flex-col gap-3">
               <div>
                 <label className="font-heading font-semibold text-xs text-ink">Full name</label>
                 <input name="name" type="text" required value={form.name} onChange={handleChange}

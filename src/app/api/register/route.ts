@@ -1,23 +1,22 @@
 import { NextResponse } from "next/server";
 import { supabase } from "@/lib/supabase";
+import { validateRegistration } from "@/lib/validateRegistration";
 
 export async function POST(request: Request) {
   try {
     const body = await request.json();
     const { name, email, phone, question } = body;
 
-    if (!name || !email || !phone) {
-      return NextResponse.json(
-        { error: "All fields are required" },
-        { status: 400 }
-      );
+    const invalid = validateRegistration({ name, email, phone });
+    if (invalid) {
+      return NextResponse.json({ error: invalid }, { status: 400 });
     }
 
     const normalizedPhone = String(phone).replace(/\D/g, "");
 
     const { error } = await supabase
       .from("registrations")
-      .insert([{ name, email, phone: normalizedPhone, question: question ? String(question).trim() : null }]);
+      .insert([{ name: String(name).trim(), email: String(email).trim().toLowerCase(), phone: normalizedPhone, question: question ? String(question).trim() : null }]);
 
     if (error) {
       console.error("[register] Supabase insert error:", error);

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { validateRegistration } from "@/lib/validateRegistration";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import RegistrationModal from "@/components/RegistrationModal";
@@ -18,6 +19,12 @@ export default function EventDetails() {
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
+    const invalid = validateRegistration(form);
+    if (invalid) {
+      setStatus("error");
+      setErrorMsg(invalid);
+      return;
+    }
     setStatus("submitting");
     setErrorMsg("");
     try {
@@ -208,7 +215,7 @@ export default function EventDetails() {
                   </span>
                   <h3 className="mt-4 mb-1 font-heading font-bold text-[26px] tracking-tight text-dg group-hover:text-bg-green transition-colors duration-300">Save your seat</h3>
                   <p className="text-sm text-muted mb-5">Takes under a minute.</p>
-                  <form onSubmit={handleSubmit} className="flex flex-col gap-3">
+                  <form onSubmit={handleSubmit} noValidate className="flex flex-col gap-3">
                     <div>
                       <label className="font-heading font-semibold text-xs text-ink">Full name</label>
                       <input name="name" type="text" required value={form.name} onChange={handleChange}
