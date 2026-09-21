@@ -18,7 +18,7 @@ export default function Footer({ onRegisterClick }: { onRegisterClick: () => voi
             <button
               type="button"
               onClick={onRegisterClick}
-              className="mt-7 font-heading font-bold text-[17px] text-dg-deep bg-gold-lt px-10 py-4 rounded-full shadow-[0_14px_30px_-12px_rgba(217,168,31,.7)] hover:bg-gold-pale hover:-translate-y-0.5 hover:shadow-[0_18px_36px_-10px_rgba(217,168,31,.8)] transition-all duration-200"
+              className="mt-7 font-heading font-bold text-[17px] text-white bg-gold px-10 py-4 rounded-full shadow-[0_12px_26px_-12px_rgba(184,134,11,.5)] hover:bg-gold-lt hover:-translate-y-0.5 hover:shadow-[0_16px_32px_-10px_rgba(184,134,11,.6)] transition-all duration-200"
             >
               Register Here
             </button>
