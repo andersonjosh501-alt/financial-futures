@@ -2,12 +2,14 @@
 
 import PageShell from "@/components/PageShell";
 import NetworkHero from "@/components/NetworkHero";
+import SocialIcon from "@/components/SocialIcon";
 
+// Paste each speaker's LinkedIn profile URL into linkedin to show the button.
 const SPEAKERS = [
-  { name: "Speaker TBD", role: "To be announced", org: "Coming soon", bio: "We're finalizing our lineup of speakers. Check back soon to meet the professionals sharing their financial insights at Financial Futures." },
-  { name: "Speaker TBD", role: "To be announced", org: "Coming soon", bio: "We're finalizing our lineup of speakers. Check back soon to meet the professionals sharing their financial insights at Financial Futures." },
-  { name: "Speaker TBD", role: "To be announced", org: "Coming soon", bio: "We're finalizing our lineup of speakers. Check back soon to meet the professionals sharing their financial insights at Financial Futures." },
-  { name: "Speaker TBD", role: "To be announced", org: "Coming soon", bio: "We're finalizing our lineup of speakers. Check back soon to meet the professionals sharing their financial insights at Financial Futures." },
+  { name: "Speaker TBD", role: "To be announced", org: "Coming soon", bio: "We're finalizing our lineup of speakers. Check back soon to meet the professionals sharing their financial insights at Financial Futures.", linkedin: "" },
+  { name: "Speaker TBD", role: "To be announced", org: "Coming soon", bio: "We're finalizing our lineup of speakers. Check back soon to meet the professionals sharing their financial insights at Financial Futures.", linkedin: "" },
+  { name: "Speaker TBD", role: "To be announced", org: "Coming soon", bio: "We're finalizing our lineup of speakers. Check back soon to meet the professionals sharing their financial insights at Financial Futures.", linkedin: "" },
+  { name: "Speaker TBD", role: "To be announced", org: "Coming soon", bio: "We're finalizing our lineup of speakers. Check back soon to meet the professionals sharing their financial insights at Financial Futures.", linkedin: "" },
 ];
 
 const PARTNERS = [
@@ -55,18 +57,28 @@ export default function SpeakersPartners() {
                     style={{ animationDelay: `${i * 0.6}s` }}
                     className="pointer-events-auto animate-float-card bg-paper border border-line rounded-[18px] overflow-hidden shadow-[0_12px_30px_-22px_rgba(8,43,14,.5)] transition-[box-shadow,border-color] duration-300 hover:border-gold hover:shadow-[0_18px_36px_-18px_rgba(184,134,11,.5)] hover:[animation-play-state:paused]"
                   >
-                    <div className="h-44 bg-gradient-to-br from-dg to-dg-deep flex items-center justify-center">
-                      <div className="w-20 h-20 rounded-full bg-white/15 flex items-center justify-center">
-                        <svg className="w-10 h-10 text-white/50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
-                        </svg>
-                      </div>
-                    </div>
-                    <div className="p-5">
+                    <div className="h-[6px] bg-gradient-to-r from-dg via-bg-green to-gold-lt" aria-hidden="true" />
+                    <div className="p-5 flex flex-col h-[calc(100%-6px)]">
                       <h3 className="font-heading font-bold text-[17px] text-ink">{speaker.name}</h3>
                       <p className="font-heading font-semibold text-xs text-gold mt-0.5">{speaker.role}</p>
                       <p className="text-xs text-muted">{speaker.org}</p>
                       <p className="text-[14px] leading-relaxed text-muted mt-3">{speaker.bio}</p>
+                      {speaker.linkedin ? (
+                        <a
+                          href={speaker.linkedin}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="mt-5 inline-flex items-center justify-center gap-2 self-start rounded-full border-[1.5px] border-dg px-4 py-2 font-heading font-bold text-[13px] tracking-wide text-dg hover:bg-dg hover:text-white hover:-translate-y-0.5 hover:shadow-[0_8px_18px_-8px_rgba(27,94,32,.7)] transition-all duration-200"
+                        >
+                          <SocialIcon name="linkedin" className="w-4 h-4" />
+                          View LinkedIn
+                        </a>
+                      ) : (
+                        <span className="mt-5 inline-flex items-center gap-2 self-start rounded-full border border-line px-4 py-2 font-heading font-bold text-[13px] tracking-wide text-muted">
+                          <SocialIcon name="linkedin" className="w-4 h-4" />
+                          LinkedIn coming soon
+                        </span>
+                      )}
                     </div>
                   </div>
                 ))}
