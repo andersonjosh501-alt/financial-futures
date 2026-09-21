@@ -1,8 +1,9 @@
 import { SOCIALS, CONTACT_EMAIL } from "@/lib/socials";
 import SocialIcon from "./SocialIcon";
+import CopyEmail from "./CopyEmail";
 
 export default function Footer() {
-  const live = SOCIALS.filter((s) => s.url);
+  const live = SOCIALS.filter((s) => s.url && s.key !== "email");
 
   return (
     <footer className="bg-dg-deeper mt-auto">
@@ -19,12 +20,13 @@ export default function Footer() {
             </p>
           </div>
           <div className="flex flex-wrap items-center gap-3">
+            <CopyEmail email={CONTACT_EMAIL} variant="button" />
             {live.map((s) => (
               <a
                 key={s.key}
                 href={s.url}
-                target={s.key === "email" ? undefined : "_blank"}
-                rel={s.key === "email" ? undefined : "noopener noreferrer"}
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label={s.label}
                 title={s.label}
                 className="group inline-flex items-center gap-2.5 rounded-full border border-white/15 bg-white/5 px-4 py-2.5 text-white hover:bg-gold-lt hover:border-gold-lt hover:text-dg-deep hover:-translate-y-0.5 hover:shadow-[0_10px_24px_-8px_rgba(217,168,31,.6)] transition-all duration-200"
@@ -45,7 +47,7 @@ export default function Footer() {
         <div className="text-[13px] text-[#7E947D] text-right">
           Youth Financial Literacy Event &middot; Parkland, FL &middot; In partnership with the Parkland Chamber of Commerce &amp; MSD Investment Club
           <span className="block mt-1">
-            Questions? <a href={`mailto:${CONTACT_EMAIL}`} className="text-gold-lt hover:text-gold-pale transition-colors">{CONTACT_EMAIL}</a>
+            Questions? <CopyEmail email={CONTACT_EMAIL} variant="inline" />
           </span>
         </div>
       </div>
