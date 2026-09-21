@@ -8,7 +8,7 @@ interface RegistrationModalProps {
 }
 
 export default function RegistrationModal({ open, onClose }: RegistrationModalProps) {
-  const [form, setForm] = useState({ name: "", email: "", phone: "" });
+  const [form, setForm] = useState({ name: "", email: "", phone: "", question: "" });
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
   const [errorMsg, setErrorMsg] = useState("");
   const dialogRef = useRef<HTMLDialogElement>(null);
@@ -20,7 +20,7 @@ export default function RegistrationModal({ open, onClose }: RegistrationModalPr
     else if (!open && dialog.open) dialog.close();
   }, [open]);
 
-  function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
+  function handleChange(e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   }
 
@@ -39,7 +39,7 @@ export default function RegistrationModal({ open, onClose }: RegistrationModalPr
         throw new Error(data.error || "Registration failed");
       }
       setStatus("success");
-      setForm({ name: "", email: "", phone: "" });
+      setForm({ name: "", email: "", phone: "", question: "" });
     } catch (err) {
       setStatus("error");
       setErrorMsg(err instanceof Error ? err.message : "Something went wrong");
@@ -101,6 +101,12 @@ export default function RegistrationModal({ open, onClose }: RegistrationModalPr
                 <label className="font-heading font-semibold text-xs text-ink">Phone number</label>
                 <input name="phone" type="tel" required value={form.phone} onChange={handleChange}
                   className="mt-1.5 w-full h-11 border border-line rounded-[10px] bg-[#FBFBF9] px-4 text-sm focus:outline-none focus:ring-2 focus:ring-bg-green focus:border-transparent" />
+              </div>
+              <div>
+                <label className="font-heading font-semibold text-xs text-ink">A Question You Have <span className="font-normal text-muted">(optional)</span></label>
+                <textarea name="question" rows={3} value={form.question} onChange={handleChange}
+                  placeholder="What's one thing about investing you'd love answered?"
+                  className="mt-1.5 w-full border border-line rounded-[10px] bg-[#FBFBF9] px-4 py-3 text-sm resize-none focus:outline-none focus:ring-2 focus:ring-bg-green focus:border-transparent" />
               </div>
               {status === "error" && (
                 <p className="text-red-600 text-sm bg-red-50 p-3 rounded-lg">{errorMsg}</p>

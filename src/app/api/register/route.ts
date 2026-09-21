@@ -4,7 +4,7 @@ import { supabase } from "@/lib/supabase";
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-    const { name, email, phone } = body;
+    const { name, email, phone, question } = body;
 
     if (!name || !email || !phone) {
       return NextResponse.json(
@@ -17,7 +17,7 @@ export async function POST(request: Request) {
 
     const { error } = await supabase
       .from("registrations")
-      .insert([{ name, email, phone: normalizedPhone }]);
+      .insert([{ name, email, phone: normalizedPhone, question: question ? String(question).trim() : null }]);
 
     if (error) {
       console.error("[register] Supabase insert error:", error);
