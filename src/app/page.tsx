@@ -51,13 +51,14 @@ export default function Home() {
           {/* HERO */}
           <section className="relative overflow-hidden bg-dg-deep">
             <HeroBackground tall />
+            <div className="md:hidden absolute inset-0 bg-gradient-to-b from-dg-deep/95 via-dg-deep/70 to-transparent pointer-events-none" aria-hidden="true" />
             <div className="relative max-w-[1200px] mx-auto px-6 lg:px-[34px] pt-[40px] pb-[130px] md:pt-[46px] md:pb-[140px]">
               <div className="max-w-[720px]">
                 <h1 className="font-heading font-bold text-[42px] md:text-[62px] leading-[1.02] tracking-[-0.025em] text-white">
                   Start building wealth<br />
                   <span className="text-bg-green">before you graduate.</span>
                 </h1>
-                <p className="mt-[22px] max-w-[560px] text-[19px] leading-relaxed text-[#C9D6C7]">
+                <p className="mt-[22px] max-w-[560px] text-[19px] leading-relaxed text-[#C9D6C7] [text-shadow:0_2px_10px_rgba(8,43,14,.9)] md:[text-shadow:none]">
                   A free community-driven event where high schoolers learn the fundamentals of investing, understand their advantages, and leave knowing precisely what to do next.
                 </p>
                 <div className="flex flex-wrap gap-3.5 mt-8">
@@ -80,13 +81,27 @@ export default function Home() {
 
           {/* STATS + PARTNERS BAR */}
           <section className="bg-cream border-b border-line">
-            <div className="max-w-[1200px] mx-auto px-6 lg:px-[34px] py-6">
+            {/* phone */}
+            <div className="md:hidden max-w-[1200px] mx-auto px-6 py-7 text-center">
+              <div className="flex items-center justify-center gap-3 font-heading font-bold text-[22px] text-dg">
+                <span>100 Spots</span>
+                <span className="w-[6px] h-[6px] rounded-full bg-gold" aria-hidden="true" />
+                <span>Free Entry</span>
+              </div>
+              <div className="mt-1.5 font-heading font-bold text-[22px] text-dg">Professional Speakers</div>
+              <div className="mt-5 font-heading font-semibold text-xs tracking-[.12em] uppercase text-muted">In partnership with:</div>
+              <div className="mt-1.5 font-heading font-bold text-[15px] leading-snug text-dg">
+                The Parkland Chamber of Commerce &amp; MSD Investment Club
+              </div>
+            </div>
+            {/* tablet and up */}
+            <div className="hidden md:block max-w-[1200px] mx-auto px-6 lg:px-[34px] py-6">
               <div className="flex items-center justify-center flex-wrap gap-x-[40px] gap-y-3 mb-4">
-                <div className="font-heading font-bold text-[22px] md:text-[26px] text-dg">100 Spots</div>
+                <div className="font-heading font-bold text-[26px] text-dg">100 Spots</div>
                 <div className="w-px h-6 bg-line" />
-                <div className="font-heading font-bold text-[22px] md:text-[26px] text-dg">Professional Speakers</div>
+                <div className="font-heading font-bold text-[26px] text-dg">Professional Speakers</div>
                 <div className="w-px h-6 bg-line" />
-                <div className="font-heading font-bold text-[22px] md:text-[26px] text-dg">Free Entry</div>
+                <div className="font-heading font-bold text-[26px] text-dg">Free Entry</div>
               </div>
               <div className="flex items-center justify-center flex-wrap gap-x-[26px] gap-y-2">
                 <span className="font-heading font-semibold text-xs tracking-[.1em] uppercase text-muted">Our Partners</span>

@@ -89,11 +89,11 @@ export default function WhatYoullLearn() {
                 {/* connecting line (desktop) */}
                 <div className="hidden lg:block absolute left-[12%] right-[12%] top-[26px] h-[3px] rounded-full bg-gradient-to-r from-gold/30 via-gold-lt to-gold/30" aria-hidden="true" />
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-5 gap-y-9 lg:gap-y-5">
                   {AGENDA.map((item, i) => (
                     <div
                       key={item.title}
-                      className="group relative"
+                      className="group relative flex flex-col"
                       style={{ animation: `float-card 4.5s ease-in-out ${i * 0.4}s infinite`, willChange: "transform" }}
                     >
                       {/* time badge sits on the line */}
@@ -111,8 +111,8 @@ export default function WhatYoullLearn() {
                       <div
                         className={
                           item.featured
-                            ? "mt-4 h-full rounded-2xl p-6 bg-dg-deep border border-gold-lt/40 shadow-[0_18px_40px_-20px_rgba(8,43,14,.7)] group-hover:scale-[1.03] group-hover:shadow-[0_26px_50px_-20px_rgba(8,43,14,.8)] transition-all duration-300"
-                            : "mt-4 h-full rounded-2xl p-6 bg-paper border border-line shadow-[0_10px_28px_-18px_rgba(8,43,14,.35)] group-hover:scale-[1.03] group-hover:border-gold/40 group-hover:shadow-[0_22px_40px_-18px_rgba(8,43,14,.5)] transition-all duration-300"
+                            ? "mt-4 flex-1 rounded-2xl p-6 bg-dg-deep border border-gold-lt/40 shadow-[0_18px_40px_-20px_rgba(8,43,14,.7)] group-hover:scale-[1.03] group-hover:shadow-[0_26px_50px_-20px_rgba(8,43,14,.8)] transition-all duration-300"
+                            : "mt-4 flex-1 rounded-2xl p-6 bg-paper border border-line shadow-[0_10px_28px_-18px_rgba(8,43,14,.35)] group-hover:scale-[1.03] group-hover:border-gold/40 group-hover:shadow-[0_22px_40px_-18px_rgba(8,43,14,.5)] transition-all duration-300"
                         }
                       >
                         <div className={item.featured ? "font-heading font-bold text-[20px] text-white" : "font-heading font-bold text-[20px] text-dg group-hover:text-bg-green transition-colors duration-300"}>
@@ -187,8 +187,8 @@ export default function WhatYoullLearn() {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-6 md:divide-x md:divide-white/20">
                   {STATS.map((st) => (
                     <div key={st.value} className="text-center md:px-6">
-                      <div className="font-heading font-bold text-[48px] md:text-[58px] leading-none tracking-[-0.03em] text-white drop-shadow-[0_2px_10px_rgba(0,0,0,.35)]">{st.value}</div>
-                      <div className="mt-3 mx-auto max-w-[260px] text-[15.5px] leading-snug text-white/85">{st.label}</div>
+                      <div className="font-heading font-bold text-[48px] md:text-[58px] leading-none tracking-[-0.03em] text-gold-lt">{st.value}</div>
+                      <div className="mt-3 mx-auto max-w-[260px] text-[15.5px] leading-snug text-white">{st.label}</div>
                     </div>
                   ))}
                 </div>
