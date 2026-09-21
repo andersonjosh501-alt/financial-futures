@@ -18,7 +18,16 @@ const SPEAKERS = [
     ],
     linkedin: "",
   },
-  { name: "Speaker TBD", role: "To be announced", org: "Coming soon", bio: ["We're finalizing our lineup of speakers. Check back soon to meet the professionals sharing their financial insights at Financial Futures."], linkedin: "" },
+  {
+    name: "Robbie Klages",
+    role: "Co-founder",
+    org: "The Rollup",
+    bio: [
+      "Robbie Klages is the co-founder of The Rollup, a finance and technology media company focused on emerging trends across blockchain, digital assets, and the broader fintech ecosystem.",
+      "A graduate of the University of Florida with a background in mathematics and philosophy, Robbie hosts interviews and conversations with founders, investors, and industry leaders while helping lead The Rollup's media events and business strategy.",
+    ],
+    linkedin: "",
+  },
   { name: "Speaker TBD", role: "To be announced", org: "Coming soon", bio: ["We're finalizing our lineup of speakers. Check back soon to meet the professionals sharing their financial insights at Financial Futures."], linkedin: "" },
 ];
 
