@@ -255,7 +255,7 @@ export default function EventDetails() {
         </section>
 
       </main>
-      <Footer />
+      <Footer onRegisterClick={() => setModalOpen(true)} />
       <RegistrationModal open={modalOpen} onClose={() => setModalOpen(false)} />
     </>
   );

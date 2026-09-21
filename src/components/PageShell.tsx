@@ -20,7 +20,7 @@ export default function PageShell({
           ? children({ openRegister: () => setModalOpen(true) })
           : children}
       </main>
-      <Footer />
+      <Footer onRegisterClick={() => setModalOpen(true)} />
       <RegistrationModal
         open={modalOpen}
         onClose={() => setModalOpen(false)}
