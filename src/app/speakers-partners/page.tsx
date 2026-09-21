@@ -13,7 +13,7 @@ const SPEAKERS = [
 const PARTNERS = [
   { name: "Parkland Chamber of Commerce", type: "Partner" },
   { name: "MSD Investment Club", type: "Partner" },
-  { name: "Anderson Accounting & Consulting", type: "Partner" },
+  { name: "Anderson Accounting & Consulting", type: "Donor" },
 ];
 
 export default function SpeakersPartners() {
