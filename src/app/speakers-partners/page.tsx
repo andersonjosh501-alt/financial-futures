@@ -16,7 +16,7 @@ const SPEAKERS = [
       "A fee-only fiduciary advisor, Doug believes financial planning is about far more than investments. It is about helping people worry less about money and devote more of their time and energy to the people, experiences, and causes that matter most.",
       "Doug is a husband of 27 years, a father, fitness enthusiast, a 5-time marathoner, an active community stakeholder and volunteer, and a lifelong Miami Dolphins fan.",
     ],
-    linkedin: "",
+    linkedin: "https://www.linkedin.com/in/paralleladvisors/",
   },
   {
     name: "Robbie Klages",
@@ -26,7 +26,7 @@ const SPEAKERS = [
       "Robbie Klages is the co-founder of The Rollup, a finance and technology media company focused on emerging trends across blockchain, digital assets, and the broader fintech ecosystem.",
       "A graduate of the University of Florida with a background in mathematics and philosophy, Robbie hosts interviews and conversations with founders, investors, and industry leaders while helping lead The Rollup's media events and business strategy.",
     ],
-    linkedin: "",
+    linkedin: "https://www.linkedin.com/in/robertklages/",
   },
   { name: "Speaker TBD", role: "To be announced", org: "Coming soon", bio: ["We're finalizing our lineup of speakers. Check back soon to meet the professionals sharing their financial insights at Financial Futures."], linkedin: "" },
 ];
