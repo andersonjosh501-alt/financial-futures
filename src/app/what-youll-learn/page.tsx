@@ -139,7 +139,7 @@ export default function WhatYoullLearn() {
           </div>
 
           {/* THE PANEL — three segment cards */}
-          <section className="relative bg-dg-deep overflow-hidden pt-8 pb-[84px] md:pb-[96px]">
+          <section className="relative bg-dg-deep overflow-hidden pt-8 pb-[72px] md:pb-[84px] border-b-2 border-white">
             <div
               className="absolute inset-0 opacity-50 pointer-events-none"
               style={{
@@ -181,22 +181,21 @@ export default function WhatYoullLearn() {
                   </div>
                 ))}
               </div>
-            </div>
-          </section>
 
-          {/* WHY IT MATTERS — stat strip */}
-          <section className="bg-bg-green py-14 md:py-16">
-            <div className="max-w-[1200px] mx-auto px-6 lg:px-[34px]">
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-6 md:divide-x md:divide-dg-deep/20">
-                {STATS.map((s) => (
-                  <div key={s.value} className="text-center md:px-6">
-                    <div className="font-heading font-bold text-[48px] md:text-[56px] leading-none tracking-[-0.03em] text-dg-deep">{s.value}</div>
-                    <div className="mt-3 mx-auto max-w-[260px] text-[15px] leading-snug text-dg-deep/85">{s.label}</div>
-                  </div>
-                ))}
+              {/* WHY IT MATTERS — stats */}
+              <div className="mt-16 md:mt-20 pt-12 md:pt-14 border-t border-white/15">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-6 md:divide-x md:divide-white/20">
+                  {STATS.map((st) => (
+                    <div key={st.value} className="text-center md:px-6">
+                      <div className="font-heading font-bold text-[48px] md:text-[58px] leading-none tracking-[-0.03em] text-white drop-shadow-[0_2px_10px_rgba(0,0,0,.35)]">{st.value}</div>
+                      <div className="mt-3 mx-auto max-w-[260px] text-[15.5px] leading-snug text-white/85">{st.label}</div>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </section>
+
       </>
     </PageShell>
   );
