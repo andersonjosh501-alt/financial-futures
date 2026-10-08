@@ -57,11 +57,9 @@ export default function Home() {
               <div className="max-w-[720px]">
                 <div className="inline-flex flex-wrap items-center gap-x-2.5 gap-y-1 rounded-full border border-gold-lt/50 bg-dg-deeper/70 px-4 py-2 font-heading font-bold text-[13px] md:text-[14px] tracking-wide text-white shadow-[0_8px_20px_-10px_rgba(0,0,0,.6)] backdrop-blur-sm">
                   <span className="w-[7px] h-[7px] rounded-full bg-gold-lt" aria-hidden="true" />
-                  <span>{EVENT.weekday}, {EVENT.date}</span>
-                  <span className="text-gold-lt" aria-hidden="true">·</span>
-                  <span>{EVENT.time}</span>
-                  <span className="text-gold-lt" aria-hidden="true">·</span>
-                  <span>{EVENT.venue}</span>
+                  <span className="whitespace-nowrap">{EVENT.weekday}, {EVENT.date} <span className="text-gold-lt" aria-hidden="true">·</span> {EVENT.time}</span>
+                  <span className="hidden sm:inline text-gold-lt" aria-hidden="true">·</span>
+                  <span className="whitespace-nowrap">{EVENT.venue}</span>
                 </div>
                 <h1 className="mt-5 font-heading font-bold text-[42px] md:text-[62px] leading-[1.02] tracking-[-0.025em] text-white">
                   Start building wealth<br />

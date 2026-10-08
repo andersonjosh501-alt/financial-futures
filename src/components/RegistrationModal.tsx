@@ -76,7 +76,7 @@ export default function RegistrationModal({ open, onClose }: RegistrationModalPr
           <h3 className="mt-4 mb-1 font-heading font-bold text-[26px] tracking-tight text-dg">
             Save your seat
           </h3>
-          <p className="mt-1.5 mb-5 font-heading font-semibold text-[14px] text-dg"><span className="text-gold">{EVENT.weekday}, {EVENT.date}</span> · {EVENT.time} · {EVENT.venue}</p>
+          <p className="mt-1.5 mb-5 font-heading font-semibold text-[14px] text-dg"><span className="whitespace-nowrap"><span className="text-gold">{EVENT.weekday}, {EVENT.date}</span> · {EVENT.time}</span> <span className="hidden sm:inline">·</span> <span className="whitespace-nowrap">{EVENT.venue}</span></p>
         </div>
 
         <div className="px-[30px] pb-[30px]">
