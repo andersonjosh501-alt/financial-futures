@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { validateRegistration } from "@/lib/validateRegistration";
+import { EVENT } from "@/lib/event";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import RegistrationModal from "@/components/RegistrationModal";
@@ -214,7 +215,7 @@ export default function EventDetails() {
                     Free registration
                   </span>
                   <h3 className="mt-4 mb-1 font-heading font-bold text-[26px] tracking-tight text-dg group-hover:text-bg-green transition-colors duration-300">Save your seat</h3>
-                  <p className="text-sm text-muted mb-5">Takes under a minute.</p>
+                  <p className="mt-1.5 mb-5 font-heading font-semibold text-[14px] text-dg"><span className="text-gold">{EVENT.weekday}, {EVENT.date}</span> · {EVENT.time} · {EVENT.venue}</p>
                   <form onSubmit={handleSubmit} noValidate className="flex flex-col gap-3">
                     <div>
                       <label className="font-heading font-semibold text-xs text-ink">Full name</label>

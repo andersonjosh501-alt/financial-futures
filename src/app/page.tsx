@@ -2,6 +2,7 @@
 
 import PageShell from "@/components/PageShell";
 import HeroBackground from "@/components/HeroBackground";
+import { EVENT } from "@/lib/event";
 
 const VALUE_PROPS = [
   {
@@ -54,7 +55,15 @@ export default function Home() {
             <div className="md:hidden absolute inset-0 bg-gradient-to-b from-dg-deep/95 via-dg-deep/70 to-transparent pointer-events-none" aria-hidden="true" />
             <div className="relative max-w-[1200px] mx-auto px-6 lg:px-[34px] pt-[40px] pb-[130px] md:pt-[46px] md:pb-[140px]">
               <div className="max-w-[720px]">
-                <h1 className="font-heading font-bold text-[42px] md:text-[62px] leading-[1.02] tracking-[-0.025em] text-white">
+                <div className="inline-flex flex-wrap items-center gap-x-2.5 gap-y-1 rounded-full border border-gold-lt/50 bg-dg-deeper/70 px-4 py-2 font-heading font-bold text-[13px] md:text-[14px] tracking-wide text-white shadow-[0_8px_20px_-10px_rgba(0,0,0,.6)] backdrop-blur-sm">
+                  <span className="w-[7px] h-[7px] rounded-full bg-gold-lt" aria-hidden="true" />
+                  <span>{EVENT.weekday}, {EVENT.date}</span>
+                  <span className="text-gold-lt" aria-hidden="true">·</span>
+                  <span>{EVENT.time}</span>
+                  <span className="text-gold-lt" aria-hidden="true">·</span>
+                  <span>{EVENT.venue}</span>
+                </div>
+                <h1 className="mt-5 font-heading font-bold text-[42px] md:text-[62px] leading-[1.02] tracking-[-0.025em] text-white">
                   Start building wealth<br />
                   <span className="text-bg-green">before you graduate.</span>
                 </h1>

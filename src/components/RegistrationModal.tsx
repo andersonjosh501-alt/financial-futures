@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import { validateRegistration } from "@/lib/validateRegistration";
+import { EVENT } from "@/lib/event";
 
 interface RegistrationModalProps {
   open: boolean;
@@ -75,7 +76,7 @@ export default function RegistrationModal({ open, onClose }: RegistrationModalPr
           <h3 className="mt-4 mb-1 font-heading font-bold text-[26px] tracking-tight text-dg">
             Save your seat
           </h3>
-          <p className="text-sm text-muted mb-5">Takes under a minute.</p>
+          <p className="mt-1.5 mb-5 font-heading font-semibold text-[14px] text-dg"><span className="text-gold">{EVENT.weekday}, {EVENT.date}</span> · {EVENT.time} · {EVENT.venue}</p>
         </div>
 
         <div className="px-[30px] pb-[30px]">
