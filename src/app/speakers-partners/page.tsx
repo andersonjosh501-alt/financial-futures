@@ -28,6 +28,17 @@ const SPEAKERS = [
     ],
     linkedin: "https://www.linkedin.com/in/robertklages/",
   },
+  {
+    name: "Jeremy Jacobs",
+    role: "Attorney",
+    org: "Brodzki Jacobs & Associates",
+    bio: [
+      "Jeremy Jacobs is an attorney at Brodzki Jacobs & Associates, where he practices corporate immigration and family law.",
+      "On the immigration side, he helps employers bring in and keep international talent through work visas and employment-based green cards. He also helps individuals and families through family-based petitions, adjustment of status, and consular processing.",
+      "His family law practice covers the full range of matters, including divorce, custody and timesharing, child support and alimony, property division, prenuptial agreements, modifications and enforcement.",
+    ],
+    linkedin: "https://www.linkedin.com/in/jeremy-jacobs60/",
+  },
   { name: "Speaker TBD", role: "To be announced", org: "Coming soon", bio: ["We're finalizing our lineup of speakers. Check back soon to meet the professionals sharing their financial insights at Financial Futures."], linkedin: "" },
 ];
 
@@ -68,7 +79,7 @@ export default function SpeakersPartners() {
                   </p>
                 </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[22px]">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[22px]">
                 {SPEAKERS.map((speaker, i) => (
                   <div
                     key={i}
