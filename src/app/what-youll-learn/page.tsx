@@ -6,7 +6,7 @@ const AGENDA = [
   { time: "6:00", title: "Warm-Up", desc: "Your questions from the sign-up form, answered live by the panel." },
   { time: "6:15", title: "Draw Wealth", desc: "Five minutes to draw what wealth looks like to you." },
   { time: "6:30", title: "Panel Discussion", desc: "Dozens of questions answered by professionals with real experience.", featured: true },
-  { time: "7:00", title: "Live Demo", desc: "An investment account opened and a trade placed in real time, start to finish." },
+  { time: "7:00", title: "Live Demo", desc: "A trade placed in real time so you can see how simple it is." },
 ];
 
 const SEGMENTS = [
