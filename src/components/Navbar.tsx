@@ -4,21 +4,6 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 
-function CalculatorIcon() {
-  return (
-    <svg viewBox="0 0 24 24" className="w-[18px] h-[18px] flex-none" aria-hidden="true">
-      <rect x="5" y="3" width="14" height="18" rx="2.5" fill="none" stroke="currentColor" strokeWidth="1.8" />
-      <rect x="8" y="6" width="8" height="3.5" rx="1" fill="currentColor" />
-      <circle cx="9" cy="13.5" r="1.1" fill="currentColor" />
-      <circle cx="12" cy="13.5" r="1.1" fill="currentColor" />
-      <circle cx="15" cy="13.5" r="1.1" fill="currentColor" />
-      <circle cx="9" cy="17" r="1.1" fill="currentColor" />
-      <circle cx="12" cy="17" r="1.1" fill="currentColor" />
-      <circle cx="15" cy="17" r="1.1" fill="currentColor" />
-    </svg>
-  );
-}
-
 export default function Navbar({
   onRegisterClick,
 }: {
@@ -44,10 +29,9 @@ export default function Navbar({
           <a
             href="/simulator"
             title="Open the growth calculator"
-            className="group inline-flex items-center gap-2.5 rounded-xl border border-dg/20 bg-mist px-4 py-2.5 text-dg shadow-[0_6px_16px_-10px_rgba(8,43,14,.5)] hover:bg-dg hover:text-white hover:border-dg hover:-translate-y-0.5 hover:shadow-[0_10px_22px_-10px_rgba(8,43,14,.7)] transition-all duration-200"
+            className="inline-flex items-center rounded-xl border-2 border-dg bg-mist px-5 py-3 text-dg shadow-[0_8px_18px_-10px_rgba(8,43,14,.6)] hover:bg-dg hover:text-white hover:-translate-y-0.5 hover:shadow-[0_12px_24px_-10px_rgba(8,43,14,.75)] transition-all duration-200"
           >
-            <CalculatorIcon />
-            <span className="font-heading font-bold text-[13.5px] tracking-wide whitespace-nowrap">Try Our Calculator</span>
+            <span className="font-heading font-bold text-[15px] tracking-wide uppercase whitespace-nowrap">Try Our Calculator</span>
           </a>
           <div className="flex items-center gap-[30px]">
           <Link href="/event-details" className={tabClass("/event-details")}>
@@ -102,9 +86,8 @@ export default function Navbar({
           <a
             href="/simulator"
             onClick={() => setMobileOpen(false)}
-            className="mt-3 flex items-center gap-2.5 rounded-xl border border-dg/20 bg-mist px-4 py-3 text-dg font-heading font-bold text-sm tracking-wide"
+            className="mt-3 flex items-center justify-center rounded-xl border-2 border-dg bg-mist px-4 py-3.5 text-dg font-heading font-bold text-[15px] tracking-wide uppercase"
           >
-            <CalculatorIcon />
             Try Our Calculator
           </a>
           <Link href="/event-details" className="block py-2 font-heading font-bold text-sm uppercase tracking-wide text-ink" onClick={() => setMobileOpen(false)}>
