@@ -4,6 +4,21 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 
+function CalculatorIcon() {
+  return (
+    <svg viewBox="0 0 24 24" className="w-[18px] h-[18px] flex-none" aria-hidden="true">
+      <rect x="5" y="3" width="14" height="18" rx="2.5" fill="none" stroke="currentColor" strokeWidth="1.8" />
+      <rect x="8" y="6" width="8" height="3.5" rx="1" fill="currentColor" />
+      <circle cx="9" cy="13.5" r="1.1" fill="currentColor" />
+      <circle cx="12" cy="13.5" r="1.1" fill="currentColor" />
+      <circle cx="15" cy="13.5" r="1.1" fill="currentColor" />
+      <circle cx="9" cy="17" r="1.1" fill="currentColor" />
+      <circle cx="12" cy="17" r="1.1" fill="currentColor" />
+      <circle cx="15" cy="17" r="1.1" fill="currentColor" />
+    </svg>
+  );
+}
+
 export default function Navbar({
   onRegisterClick,
 }: {
@@ -24,14 +39,24 @@ export default function Navbar({
   return (
     <nav className="bg-paper border-b border-line sticky top-0 z-50">
       <div className="max-w-[1200px] mx-auto grid grid-cols-[1fr_auto_1fr] items-center px-6 lg:px-[34px] py-4 gap-6">
-        {/* LEFT NAV */}
-        <div className="hidden md:flex items-center justify-end gap-[30px]">
+        {/* LEFT NAV — calculator box pinned to the far left, tabs beside the pill */}
+        <div className="hidden md:flex items-center justify-between gap-6">
+          <a
+            href="/simulator"
+            title="Open the growth calculator"
+            className="group inline-flex items-center gap-2.5 rounded-xl border border-dg/20 bg-mist px-4 py-2.5 text-dg shadow-[0_6px_16px_-10px_rgba(8,43,14,.5)] hover:bg-dg hover:text-white hover:border-dg hover:-translate-y-0.5 hover:shadow-[0_10px_22px_-10px_rgba(8,43,14,.7)] transition-all duration-200"
+          >
+            <CalculatorIcon />
+            <span className="font-heading font-bold text-[13.5px] tracking-wide whitespace-nowrap">Try Our Calculator</span>
+          </a>
+          <div className="flex items-center gap-[30px]">
           <Link href="/event-details" className={tabClass("/event-details")}>
             The Event
           </Link>
           <Link href="/speakers-partners" className={tabClass("/speakers-partners")}>
             Speakers
           </Link>
+          </div>
         </div>
 
         {/* CENTER — FINANCIAL FUTURES PILL */}
@@ -74,6 +99,14 @@ export default function Navbar({
 
       {mobileOpen && (
         <div className="md:hidden border-t border-line px-6 pb-4 space-y-3 bg-paper">
+          <a
+            href="/simulator"
+            onClick={() => setMobileOpen(false)}
+            className="mt-3 flex items-center gap-2.5 rounded-xl border border-dg/20 bg-mist px-4 py-3 text-dg font-heading font-bold text-sm tracking-wide"
+          >
+            <CalculatorIcon />
+            Try Our Calculator
+          </a>
           <Link href="/event-details" className="block py-2 font-heading font-bold text-sm uppercase tracking-wide text-ink" onClick={() => setMobileOpen(false)}>
             The Event
           </Link>
